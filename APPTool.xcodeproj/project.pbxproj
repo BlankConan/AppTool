@@ -15,6 +15,9 @@
 		0A13CF8220C645780071F0D9 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13CF8120C645780071F0D9 /* BaseNavigationController.m */; };
 		0A13CF8520C645AC0071F0D9 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13CF8420C645AC0071F0D9 /* BaseTabBarController.m */; };
 		0A13CF8C20C6FB5D0071F0D9 /* DatabaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13CF8B20C6FB5D0071F0D9 /* DatabaseTool.m */; };
+		0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */; };
+		0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E699210B29930061BA14 /* UIControl+Statics.m */; };
+		0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */; };
 		C43742989EA4141B1A77CCC8 /* libPods-APPTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 489F03586AF484002750922B /* libPods-APPTool.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +40,12 @@
 		0A13CF9220CABC700071F0D9 /* PathMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathMacro.h; sourceTree = "<group>"; };
 		0A13CF9320CABEA90071F0D9 /* DebugMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugMacro.h; sourceTree = "<group>"; };
 		0A13CF9520CABF210071F0D9 /* AppTool.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTool.pch; sourceTree = "<group>"; };
+		0A45E695210AE2FA0061BA14 /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
+		0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
+		0A45E698210B29930061BA14 /* UIControl+Statics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Statics.h"; sourceTree = "<group>"; };
+		0A45E699210B29930061BA14 /* UIControl+Statics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Statics.m"; sourceTree = "<group>"; };
+		0A45E69D210C197E0061BA14 /* UIGestureRecognizer+Statics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Statics.h"; sourceTree = "<group>"; };
+		0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Statics.m"; sourceTree = "<group>"; };
 		489F03586AF484002750922B /* libPods-APPTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APPTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A03D62366E7E1EDED80B82C /* Pods-APPTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPTool/Pods-APPTool.debug.xcconfig"; sourceTree = "<group>"; };
 		C6A5894A5D6D2D963D78FD65 /* Pods-APPTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPTool/Pods-APPTool.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +130,7 @@
 		0A13CF8620C6F9500071F0D9 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0A45E694210AE2C80061BA14 /* Runtime */,
 				0A13CF9620CC0CE70071F0D9 /* Download */,
 				0A13CF8D20C6FB620071F0D9 /* Database */,
 			);
@@ -158,6 +168,27 @@
 			children = (
 			);
 			path = Download;
+			sourceTree = "<group>";
+		};
+		0A45E694210AE2C80061BA14 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				0A45E69B210B82BD0061BA14 /* Statics */,
+				0A45E695210AE2FA0061BA14 /* NSObject+Runtime.h */,
+				0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		0A45E69B210B82BD0061BA14 /* Statics */ = {
+			isa = PBXGroup;
+			children = (
+				0A45E698210B29930061BA14 /* UIControl+Statics.h */,
+				0A45E699210B29930061BA14 /* UIControl+Statics.m */,
+				0A45E69D210C197E0061BA14 /* UIGestureRecognizer+Statics.h */,
+				0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */,
+			);
+			path = Statics;
 			sourceTree = "<group>";
 		};
 		35BA72604307A244F983736D /* Pods */ = {
@@ -293,7 +324,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A13CF8C20C6FB5D0071F0D9 /* DatabaseTool.m in Sources */,
+				0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */,
 				0A13CF8520C645AC0071F0D9 /* BaseTabBarController.m in Sources */,
+				0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */,
+				0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */,
 				0A13CF8220C645780071F0D9 /* BaseNavigationController.m in Sources */,
 				0A13CF7E20C6453D0071F0D9 /* RootVC.m in Sources */,
 				0A13CF7520C644E90071F0D9 /* main.m in Sources */,

@@ -20,7 +20,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor orangeColor];
-    [DatabaseTool initDB];
+    
 }
 
 

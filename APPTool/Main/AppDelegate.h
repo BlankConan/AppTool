@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+{
+    NSString *_dddd;
+}
 @property (strong, nonatomic) UIWindow *window;
 
++ (void)test;
 
 @end
 
