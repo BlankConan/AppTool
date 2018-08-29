@@ -8,4 +8,5 @@ target 'APPTool' do
   # Pods for APPTool
   pod 'FMDB', '~> 2.7.2'
   pod 'AFNetworking', '~> 3.2.0'
+  pod 'Aspects', '~> 1.4.1'
 end

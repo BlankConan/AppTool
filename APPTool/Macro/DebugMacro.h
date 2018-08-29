@@ -27,6 +27,10 @@
 
 #endif
 
+// 引用计数
+#define RetainCount(obj) CFGetRetainCount((__bridge CFTypeRef)(obj))
+#define logRetainCount(obj) NSLog(@"%ld", CFGetRetainCount((__bridge CFTypeRef)(obj)));
+
 /// 归档/解档.
 #define OBJC_STRING(x) @#x
 #define Decode(x) self.x = [aDecoder decodeObjectForKey:OBJC_STRING(x)]

@@ -18,6 +18,13 @@
 		0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */; };
 		0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E699210B29930061BA14 /* UIControl+Statics.m */; };
 		0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */; };
+		0A45E6A3210E17470061BA14 /* TimerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E6A2210E17470061BA14 /* TimerTool.m */; };
+		0A45E6A6210F10250061BA14 /* GreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E6A5210F10250061BA14 /* GreenViewController.m */; };
+		0AF3A8A2212AC83200F46BD5 /* AppBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8A1212AC83200F46BD5 /* AppBaseView.m */; };
+		0AF3A8A5212AC84400F46BD5 /* GreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8A4212AC84400F46BD5 /* GreenView.m */; };
+		0AF3A8A8212AC84E00F46BD5 /* RedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8A7212AC84E00F46BD5 /* RedView.m */; };
+		0AF3A8AB212AC87100F46BD5 /* ExampleResponderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8AA212AC87100F46BD5 /* ExampleResponderVC.m */; };
+		0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8B2212B2F9E00F46BD5 /* UIView+UIResponder.m */; };
 		C43742989EA4141B1A77CCC8 /* libPods-APPTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 489F03586AF484002750922B /* libPods-APPTool.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +53,20 @@
 		0A45E699210B29930061BA14 /* UIControl+Statics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Statics.m"; sourceTree = "<group>"; };
 		0A45E69D210C197E0061BA14 /* UIGestureRecognizer+Statics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Statics.h"; sourceTree = "<group>"; };
 		0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Statics.m"; sourceTree = "<group>"; };
+		0A45E6A1210E17470061BA14 /* TimerTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerTool.h; sourceTree = "<group>"; };
+		0A45E6A2210E17470061BA14 /* TimerTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerTool.m; sourceTree = "<group>"; };
+		0A45E6A4210F10250061BA14 /* GreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GreenViewController.h; sourceTree = "<group>"; };
+		0A45E6A5210F10250061BA14 /* GreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GreenViewController.m; sourceTree = "<group>"; };
+		0AF3A8A0212AC83200F46BD5 /* AppBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBaseView.h; sourceTree = "<group>"; };
+		0AF3A8A1212AC83200F46BD5 /* AppBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBaseView.m; sourceTree = "<group>"; };
+		0AF3A8A3212AC84400F46BD5 /* GreenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GreenView.h; sourceTree = "<group>"; };
+		0AF3A8A4212AC84400F46BD5 /* GreenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GreenView.m; sourceTree = "<group>"; };
+		0AF3A8A6212AC84E00F46BD5 /* RedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedView.h; sourceTree = "<group>"; };
+		0AF3A8A7212AC84E00F46BD5 /* RedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedView.m; sourceTree = "<group>"; };
+		0AF3A8A9212AC87100F46BD5 /* ExampleResponderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleResponderVC.h; sourceTree = "<group>"; };
+		0AF3A8AA212AC87100F46BD5 /* ExampleResponderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleResponderVC.m; sourceTree = "<group>"; };
+		0AF3A8B1212B2F9E00F46BD5 /* UIView+UIResponder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+UIResponder.h"; sourceTree = "<group>"; };
+		0AF3A8B2212B2F9E00F46BD5 /* UIView+UIResponder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIResponder.m"; sourceTree = "<group>"; };
 		489F03586AF484002750922B /* libPods-APPTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APPTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A03D62366E7E1EDED80B82C /* Pods-APPTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPTool/Pods-APPTool.debug.xcconfig"; sourceTree = "<group>"; };
 		C6A5894A5D6D2D963D78FD65 /* Pods-APPTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPTool/Pods-APPTool.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +133,8 @@
 				0A13CF6620C644E70071F0D9 /* AppDelegate.m */,
 				0A13CF7C20C6453D0071F0D9 /* RootVC.h */,
 				0A13CF7D20C6453D0071F0D9 /* RootVC.m */,
+				0A45E6A4210F10250061BA14 /* GreenViewController.h */,
+				0A45E6A5210F10250061BA14 /* GreenViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -130,6 +153,8 @@
 		0A13CF8620C6F9500071F0D9 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0AF3A89E21296AB500F46BD5 /* Responder */,
+				0A45E6A0210E171F0061BA14 /* Timer */,
 				0A45E694210AE2C80061BA14 /* Runtime */,
 				0A13CF9620CC0CE70071F0D9 /* Download */,
 				0A13CF8D20C6FB620071F0D9 /* Database */,
@@ -173,9 +198,9 @@
 		0A45E694210AE2C80061BA14 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				0AF3A8AD212B2EFB00F46BD5 /* Responder */,
+				0AF3A8AC212B2A6300F46BD5 /* Base */,
 				0A45E69B210B82BD0061BA14 /* Statics */,
-				0A45E695210AE2FA0061BA14 /* NSObject+Runtime.h */,
-				0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -189,6 +214,56 @@
 				0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */,
 			);
 			path = Statics;
+			sourceTree = "<group>";
+		};
+		0A45E6A0210E171F0061BA14 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				0A45E6A1210E17470061BA14 /* TimerTool.h */,
+				0A45E6A2210E17470061BA14 /* TimerTool.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		0AF3A89E21296AB500F46BD5 /* Responder */ = {
+			isa = PBXGroup;
+			children = (
+				0AF3A89F212AC80E00F46BD5 /* Example */,
+			);
+			path = Responder;
+			sourceTree = "<group>";
+		};
+		0AF3A89F212AC80E00F46BD5 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				0AF3A8A0212AC83200F46BD5 /* AppBaseView.h */,
+				0AF3A8A1212AC83200F46BD5 /* AppBaseView.m */,
+				0AF3A8A3212AC84400F46BD5 /* GreenView.h */,
+				0AF3A8A4212AC84400F46BD5 /* GreenView.m */,
+				0AF3A8A6212AC84E00F46BD5 /* RedView.h */,
+				0AF3A8A7212AC84E00F46BD5 /* RedView.m */,
+				0AF3A8A9212AC87100F46BD5 /* ExampleResponderVC.h */,
+				0AF3A8AA212AC87100F46BD5 /* ExampleResponderVC.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		0AF3A8AC212B2A6300F46BD5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0A45E695210AE2FA0061BA14 /* NSObject+Runtime.h */,
+				0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0AF3A8AD212B2EFB00F46BD5 /* Responder */ = {
+			isa = PBXGroup;
+			children = (
+				0AF3A8B1212B2F9E00F46BD5 /* UIView+UIResponder.h */,
+				0AF3A8B2212B2F9E00F46BD5 /* UIView+UIResponder.m */,
+			);
+			path = Responder;
 			sourceTree = "<group>";
 		};
 		35BA72604307A244F983736D /* Pods */ = {
@@ -326,12 +401,19 @@
 				0A13CF8C20C6FB5D0071F0D9 /* DatabaseTool.m in Sources */,
 				0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */,
 				0A13CF8520C645AC0071F0D9 /* BaseTabBarController.m in Sources */,
+				0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */,
 				0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */,
 				0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */,
 				0A13CF8220C645780071F0D9 /* BaseNavigationController.m in Sources */,
+				0AF3A8A8212AC84E00F46BD5 /* RedView.m in Sources */,
 				0A13CF7E20C6453D0071F0D9 /* RootVC.m in Sources */,
+				0AF3A8A5212AC84400F46BD5 /* GreenView.m in Sources */,
+				0A45E6A3210E17470061BA14 /* TimerTool.m in Sources */,
 				0A13CF7520C644E90071F0D9 /* main.m in Sources */,
+				0A45E6A6210F10250061BA14 /* GreenViewController.m in Sources */,
 				0A13CF6720C644E70071F0D9 /* AppDelegate.m in Sources */,
+				0AF3A8A2212AC83200F46BD5 /* AppBaseView.m in Sources */,
+				0AF3A8AB212AC87100F46BD5 /* ExampleResponderVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
