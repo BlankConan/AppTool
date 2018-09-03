@@ -56,7 +56,8 @@ static inline void swizzling_Method(Class cls, SEL originalSelector, SEL swizzli
 
 
 - (void)app_touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-
+    
+    [super touchesBegan:touches withEvent:event];
     debugLog(@"touch Begin: %@", [self class]);
     UIResponder *next = [self nextResponder];
     while (next) {
@@ -67,14 +68,17 @@ static inline void swizzling_Method(Class cls, SEL originalSelector, SEL swizzli
 
 
 - (void)app_touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesMoved:touches withEvent:event];
 //    debugLog(@"touch Move: %@", [self class]);
 }
 
 - (void)app_touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
     debugLog(@"touch Ended: %@", [self class]);
 }
 
 - (void)app_touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesCancelled:touches withEvent:event];
     debugLog(@"touch Cancelled: %@", [self class]);
 }
 
