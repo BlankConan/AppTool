@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 模拟系统响应链传递
+ */
 @interface UIView (UIResponder)
-
 
 @end

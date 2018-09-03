@@ -38,32 +38,80 @@ static inline void swizzling_Method(Class cls, SEL originalSelector, SEL swizzli
     }
 }
 
-
 @implementation UIView (UIResponder)
 
 
 + (void)load {
     
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        swizzling_Method([UIView class], @selector(touchesBegan:withEvent:), @selector(app_touchesBegan:withEvent:));
+        swizzling_Method([UIView class], @selector(touchesMoved:withEvent:), @selector(app_touchesMoved:withEvent:));
+        swizzling_Method([UIView class], @selector(touchesEnded:withEvent:), @selector(app_touchesEnded:withEvent:));
+        swizzling_Method([UIView class], @selector(touchesCancelled:withEvent:), @selector(app_touchesCancelled:withEvent:));
+        swizzling_Method([UIView class], @selector(pointInside:withEvent:), @selector(app_pointInside:withEvent:));
+        swizzling_Method([UIView class], @selector(hitTest:withEvent:), @selector(app_hitTest:withEvent:));
+    });
 }
 
 
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//
-//}
-//
-//
-//- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//
-//}
-//
-//- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//
-//}
-//
-//- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//
-//}
+- (void)app_touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 
+    debugLog(@"touch Begin: %@", [self class]);
+    UIResponder *next = [self nextResponder];
+    while (next) {
+        debugLog(@"%@", next.class);
+        next = [next nextResponder];
+    }
+}
+
+
+- (void)app_touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    debugLog(@"touch Move: %@", [self class]);
+}
+
+- (void)app_touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    debugLog(@"touch Ended: %@", [self class]);
+}
+
+- (void)app_touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    debugLog(@"touch Cancelled: %@", [self class]);
+}
+
+/** hitTest:withEvent:方法的处理流程如下：
+    调用当前view的pointInside:withEvent:方法来判定触摸点是否在当前view内部，
+    如果返回NO，则hitTest:withEvent:返回nil；
+    如果返回YES，则向当前view内的subViews发送hitTest:withEvent:消息;
+    所有subView的遍历顺序是从数组的末尾向前遍历，直到有subView返回非空对象或遍历完成。
+    如果有subView返回非空对象，hitTest方法会返回这个对象，如果每个subView返回都是nil，则返回自己
+ */
+- (nullable UIView *)app_hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    
+    if (!self.isUserInteractionEnabled || self.isHidden || self.alpha <= 0.01) return nil;
+    
+    if ([self pointInside:point withEvent:event]) {
+        for (UIView *subView in [self.subviews reverseObjectEnumerator]) {
+            CGPoint convertPoint = [subView convertPoint:point fromView:self];
+            UIView *hitTestView = [subView hitTest:convertPoint withEvent:event];
+            if (hitTestView) {
+                return hitTestView;
+            }
+        }
+        debugLog(@"命中的视图%@", self.class);
+        return self;
+    }
+    return nil;
+}
+
+
+- (BOOL)app_pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    
+    BOOL success = CGRectContainsPoint(self.bounds, point);
+    
+    success ? debugLog(@"点在%@", [self class]) : debugLog(@"点不在%@", [self class]);
+    
+    return success;
+}
 
 
 @end

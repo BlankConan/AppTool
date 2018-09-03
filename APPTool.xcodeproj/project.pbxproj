@@ -18,7 +18,6 @@
 		0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */; };
 		0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E699210B29930061BA14 /* UIControl+Statics.m */; };
 		0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */; };
-		0A45E6A3210E17470061BA14 /* TimerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E6A2210E17470061BA14 /* TimerTool.m */; };
 		0A45E6A6210F10250061BA14 /* GreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E6A5210F10250061BA14 /* GreenViewController.m */; };
 		0AF3A8A2212AC83200F46BD5 /* AppBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8A1212AC83200F46BD5 /* AppBaseView.m */; };
 		0AF3A8A5212AC84400F46BD5 /* GreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8A4212AC84400F46BD5 /* GreenView.m */; };
@@ -53,8 +52,6 @@
 		0A45E699210B29930061BA14 /* UIControl+Statics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Statics.m"; sourceTree = "<group>"; };
 		0A45E69D210C197E0061BA14 /* UIGestureRecognizer+Statics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Statics.h"; sourceTree = "<group>"; };
 		0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Statics.m"; sourceTree = "<group>"; };
-		0A45E6A1210E17470061BA14 /* TimerTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerTool.h; sourceTree = "<group>"; };
-		0A45E6A2210E17470061BA14 /* TimerTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerTool.m; sourceTree = "<group>"; };
 		0A45E6A4210F10250061BA14 /* GreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GreenViewController.h; sourceTree = "<group>"; };
 		0A45E6A5210F10250061BA14 /* GreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GreenViewController.m; sourceTree = "<group>"; };
 		0AF3A8A0212AC83200F46BD5 /* AppBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBaseView.h; sourceTree = "<group>"; };
@@ -219,8 +216,6 @@
 		0A45E6A0210E171F0061BA14 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				0A45E6A1210E17470061BA14 /* TimerTool.h */,
-				0A45E6A2210E17470061BA14 /* TimerTool.m */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -408,7 +403,6 @@
 				0AF3A8A8212AC84E00F46BD5 /* RedView.m in Sources */,
 				0A13CF7E20C6453D0071F0D9 /* RootVC.m in Sources */,
 				0AF3A8A5212AC84400F46BD5 /* GreenView.m in Sources */,
-				0A45E6A3210E17470061BA14 /* TimerTool.m in Sources */,
 				0A13CF7520C644E90071F0D9 /* main.m in Sources */,
 				0A45E6A6210F10250061BA14 /* GreenViewController.m in Sources */,
 				0A13CF6720C644E70071F0D9 /* AppDelegate.m in Sources */,

@@ -10,7 +10,11 @@
 #import "DatabaseTool.h"
 #import "GreenViewController.h"
 #import "ExampleResponderVC.h"
+
+
 @interface RootVC ()
+
+
 
 @end
 
@@ -21,7 +25,7 @@
     
     self.view.backgroundColor = [UIColor orangeColor];
     
-    
+   
     
 }
 
@@ -35,11 +39,10 @@
     // 响应链测试
 //    ExampleResponderVC *vc = [[ExampleResponderVC alloc] init];
 //    [self presentViewController:vc animated:YES completion:nil];
+    
+    
 }
 
-+ (void)timeRun:(NSTimer *)timer {
-    NSLog(@"timer事件  %@", NSThread.currentThread);
-}
 
 
 

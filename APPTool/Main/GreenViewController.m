@@ -7,10 +7,9 @@
 //
 
 #import "GreenViewController.h"
-#import "RootVC.h"
+
+
 @interface GreenViewController ()
-
-
 
 @end
 
@@ -19,19 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor greenColor];
-    // Do any additional setup after loading the view.
 
-    ^{
-        
-      
-    };
-
+    
 }
 
-
-- (void)viewWillDisappear:(BOOL)animated {
-
-}
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -41,22 +31,8 @@
 
 - (void)dealloc {
     
-    NSLog(@"释放了");
+    NSLog(@"释放了%@", [self class]);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
