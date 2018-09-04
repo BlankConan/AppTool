@@ -7,8 +7,7 @@
 //
 
 #import "RootVC.h"
-#import "DatabaseTool.h"
-
+#import "DispatchTestVC.h"
 
 @interface RootVC ()
 
@@ -26,7 +25,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
+    DispatchTestVC *vc = [[DispatchTestVC alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 

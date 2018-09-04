@@ -41,18 +41,18 @@ static inline void swizzling_Method(Class cls, SEL originalSelector, SEL swizzli
 @implementation UIView (UIResponder)
 
 
-+ (void)load {
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        swizzling_Method([UIView class], @selector(touchesBegan:withEvent:), @selector(app_touchesBegan:withEvent:));
-        swizzling_Method([UIView class], @selector(touchesMoved:withEvent:), @selector(app_touchesMoved:withEvent:));
-        swizzling_Method([UIView class], @selector(touchesEnded:withEvent:), @selector(app_touchesEnded:withEvent:));
-        swizzling_Method([UIView class], @selector(touchesCancelled:withEvent:), @selector(app_touchesCancelled:withEvent:));
-        swizzling_Method([UIView class], @selector(pointInside:withEvent:), @selector(app_pointInside:withEvent:));
-        swizzling_Method([UIView class], @selector(hitTest:withEvent:), @selector(app_hitTest:withEvent:));
-    });
-}
+//+ (void)load {
+//    
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        swizzling_Method([UIView class], @selector(touchesBegan:withEvent:), @selector(app_touchesBegan:withEvent:));
+//        swizzling_Method([UIView class], @selector(touchesMoved:withEvent:), @selector(app_touchesMoved:withEvent:));
+//        swizzling_Method([UIView class], @selector(touchesEnded:withEvent:), @selector(app_touchesEnded:withEvent:));
+//        swizzling_Method([UIView class], @selector(touchesCancelled:withEvent:), @selector(app_touchesCancelled:withEvent:));
+//        swizzling_Method([UIView class], @selector(pointInside:withEvent:), @selector(app_pointInside:withEvent:));
+//        swizzling_Method([UIView class], @selector(hitTest:withEvent:), @selector(app_hitTest:withEvent:));
+//    });
+//}
 
 
 - (void)app_touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
