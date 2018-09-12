@@ -17,7 +17,7 @@
 
 #import "DispatchTestVC.h"
 #import "AFNetworking.h"
-#import <asl.h>
+
 
 @interface DispatchTestVC ()
 
@@ -31,6 +31,8 @@
 
 @implementation DispatchTestVC
 
+#pragma mark Life Circle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -41,14 +43,16 @@
     self.barrierBtn.frame = CGRectMake(CGRectGetMaxX(self.groupGCDBtn.frame)+20, CGRectGetMinY(self.groupGCDBtn.frame), 150, 30);
     
     self.targetQueueBtn.frame = CGRectMake(20, CGRectGetMaxY(self.groupGCDBtn.frame)+20, 150, 30);
+    
 }
+
 
 #pragma mark - 异步同步 串行和并行
 // 异步
 - (void)queueAsync {
     
     // YES：串行 NO：并行
-    BOOL isSerialQueue = YES;
+    BOOL isSerialQueue = NO;
     dispatch_queue_t queue = nil;
     isSerialQueue ? (queue = dispatch_queue_create("com.liugangyi.www", DISPATCH_QUEUE_SERIAL)) : (queue = dispatch_queue_create("com.liugangyi.www", DISPATCH_QUEUE_CONCURRENT));
     
@@ -122,7 +126,7 @@
     
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t concurrentQueue = dispatch_queue_create("com.liugangyiHH.www", DISPATCH_QUEUE_CONCURRENT);
-    BOOL isQueue = NO;
+    BOOL isQueue = YES;
     
     if (isQueue) {
         
@@ -133,6 +137,11 @@
         
         dispatch_group_async(group, concurrentQueue, ^{
             NSLog(@"2.2");
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                sleep(2);
+                NSLog(@"yyiburenw");
+            });
         });
         
         dispatch_group_async(group, concurrentQueue, ^{
@@ -265,9 +274,7 @@
 #pragma mark - Touches
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -333,6 +340,7 @@
     }
     return _targetQueueBtn;
 }
+
 
 
 @end
