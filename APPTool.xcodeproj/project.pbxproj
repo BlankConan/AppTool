@@ -16,6 +16,9 @@
 		0A13CF8520C645AC0071F0D9 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13CF8420C645AC0071F0D9 /* BaseTabBarController.m */; };
 		0A13CF8C20C6FB5D0071F0D9 /* DatabaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13CF8B20C6FB5D0071F0D9 /* DatabaseTool.m */; };
 		0A3A5B3F2196AFCD009526F0 /* UIView+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B3E2196AFCD009526F0 /* UIView+Utility.m */; };
+		0A3A5B462196B3C3009526F0 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B452196B3C3009526F0 /* NSString+MD5.m */; };
+		0A3A5B4B2196B4AA009526F0 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B4A2196B4AA009526F0 /* NSString+Size.m */; };
+		0A3A5B4F2196B6B8009526F0 /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B4E2196B6B8009526F0 /* NSString+Date.m */; };
 		0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */; };
 		0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E699210B29930061BA14 /* UIControl+Statics.m */; };
 		0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */; };
@@ -46,6 +49,12 @@
 		0A13CF9520CABF210071F0D9 /* AppTool.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTool.pch; sourceTree = "<group>"; };
 		0A3A5B3D2196AFCD009526F0 /* UIView+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Utility.h"; sourceTree = "<group>"; };
 		0A3A5B3E2196AFCD009526F0 /* UIView+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utility.m"; sourceTree = "<group>"; };
+		0A3A5B442196B3C3009526F0 /* NSString+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		0A3A5B452196B3C3009526F0 /* NSString+MD5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		0A3A5B492196B4AA009526F0 /* NSString+Size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
+		0A3A5B4A2196B4AA009526F0 /* NSString+Size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
+		0A3A5B4D2196B6B8009526F0 /* NSString+Date.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
+		0A3A5B4E2196B6B8009526F0 /* NSString+Date.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
 		0A45E695210AE2FA0061BA14 /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
 		0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
 		0A45E698210B29930061BA14 /* UIControl+Statics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Statics.h"; sourceTree = "<group>"; };
@@ -140,6 +149,7 @@
 		0A13CF8620C6F9500071F0D9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0A3A5B432196B3A0009526F0 /* StringUtility */,
 				0A3A5B3C2196AFA2009526F0 /* UIViewUtility */,
 				0AC33DA52149397700A3DFAE /* CustomerTimer */,
 				0ABAFB22213D876700F8AF0C /* Dispatch */,
@@ -190,6 +200,43 @@
 				0A3A5B3E2196AFCD009526F0 /* UIView+Utility.m */,
 			);
 			path = UIViewUtility;
+			sourceTree = "<group>";
+		};
+		0A3A5B432196B3A0009526F0 /* StringUtility */ = {
+			isa = PBXGroup;
+			children = (
+				0A3A5B4C2196B6AA009526F0 /* Date */,
+				0A3A5B482196B491009526F0 /* Size */,
+				0A3A5B472196B486009526F0 /* MD5 */,
+			);
+			path = StringUtility;
+			sourceTree = "<group>";
+		};
+		0A3A5B472196B486009526F0 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				0A3A5B442196B3C3009526F0 /* NSString+MD5.h */,
+				0A3A5B452196B3C3009526F0 /* NSString+MD5.m */,
+			);
+			path = MD5;
+			sourceTree = "<group>";
+		};
+		0A3A5B482196B491009526F0 /* Size */ = {
+			isa = PBXGroup;
+			children = (
+				0A3A5B492196B4AA009526F0 /* NSString+Size.h */,
+				0A3A5B4A2196B4AA009526F0 /* NSString+Size.m */,
+			);
+			path = Size;
+			sourceTree = "<group>";
+		};
+		0A3A5B4C2196B6AA009526F0 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				0A3A5B4D2196B6B8009526F0 /* NSString+Date.h */,
+				0A3A5B4E2196B6B8009526F0 /* NSString+Date.m */,
+			);
+			path = Date;
 			sourceTree = "<group>";
 		};
 		0A45E694210AE2C80061BA14 /* Runtime */ = {
@@ -363,11 +410,14 @@
 				0A3A5B3F2196AFCD009526F0 /* UIView+Utility.m in Sources */,
 				0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */,
 				0A13CF8520C645AC0071F0D9 /* BaseTabBarController.m in Sources */,
+				0A3A5B4B2196B4AA009526F0 /* NSString+Size.m in Sources */,
 				0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */,
 				0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */,
+				0A3A5B462196B3C3009526F0 /* NSString+MD5.m in Sources */,
 				0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */,
 				0A13CF8220C645780071F0D9 /* BaseNavigationController.m in Sources */,
 				0AC33DA82149398600A3DFAE /* AppTimer.m in Sources */,
+				0A3A5B4F2196B6B8009526F0 /* NSString+Date.m in Sources */,
 				0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */,
 				0A13CF7E20C6453D0071F0D9 /* RootVC.m in Sources */,
 				0A13CF7520C644E90071F0D9 /* main.m in Sources */,
