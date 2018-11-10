@@ -103,7 +103,7 @@
 			children = (
 				0A13CF9420CABEFC0071F0D9 /* Header */,
 				0A13CF8E20CAB8540071F0D9 /* Macro */,
-				0A13CF8620C6F9500071F0D9 /* Unite */,
+				0A13CF8620C6F9500071F0D9 /* Common */,
 				0A13CF7F20C645450071F0D9 /* Base */,
 				0A13CF7B20C644F30071F0D9 /* Main */,
 				0AF3A8B7213D85A200F46BD5 /* Resource */,
@@ -134,7 +134,7 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		0A13CF8620C6F9500071F0D9 /* Unite */ = {
+		0A13CF8620C6F9500071F0D9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				0AC33DA52149397700A3DFAE /* CustomerTimer */,
@@ -143,7 +143,7 @@
 				0A13CF9620CC0CE70071F0D9 /* Download */,
 				0A13CF8D20C6FB620071F0D9 /* Database */,
 			);
-			path = Unite;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		0A13CF8D20C6FB620071F0D9 /* Database */ = {
@@ -266,8 +266,6 @@
 				0A13CF5E20C644E70071F0D9 /* Sources */,
 				0A13CF5F20C644E70071F0D9 /* Frameworks */,
 				0A13CF6020C644E70071F0D9 /* Resources */,
-				2E58D324B2927FBFE69056CE /* [CP] Embed Pods Frameworks */,
-				83885E5B0F6C6D50B54CFA32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,36 +321,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2E58D324B2927FBFE69056CE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APPTool/Pods-APPTool-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		83885E5B0F6C6D50B54CFA32 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APPTool/Pods-APPTool-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D27D86E3A2E602BD9F720784 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
