@@ -9,6 +9,9 @@
 #ifndef AppTool_pch
 #define AppTool_pch
 
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
 #import "PathMacro.h"
 #import "DebugMacro.h"
 
