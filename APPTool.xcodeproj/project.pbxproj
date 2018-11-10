@@ -129,7 +129,7 @@
 				0A3A5B502196B845009526F0 /* Classes */,
 				0A13CF9420CABEFC0071F0D9 /* Header */,
 				0A13CF8620C6F9500071F0D9 /* Common */,
-				0A13CF7F20C645450071F0D9 /* Base */,
+				0A13CF7F20C645450071F0D9 /* BaseClass */,
 				0A13CF7B20C644F30071F0D9 /* Main */,
 				0AF3A8B7213D85A200F46BD5 /* Resource */,
 			);
@@ -148,7 +148,7 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		0A13CF7F20C645450071F0D9 /* Base */ = {
+		0A13CF7F20C645450071F0D9 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
 				0A13CF8320C645AC0071F0D9 /* BaseTabBarController.h */,
@@ -156,17 +156,17 @@
 				0A13CF8020C645780071F0D9 /* BaseNavigationController.h */,
 				0A13CF8120C645780071F0D9 /* BaseNavigationController.m */,
 			);
-			path = Base;
+			path = BaseClass;
 			sourceTree = "<group>";
 		};
 		0A13CF8620C6F9500071F0D9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0A3A5B612196BE7E009526F0 /* ViewReleated */,
 				0A3A5B5F2196BCE5009526F0 /* Const */,
 				0A13CF8E20CAB8540071F0D9 /* Config */,
 				0A3A5B522196B945009526F0 /* DispatcherManager */,
 				0A3A5B432196B3A0009526F0 /* StringUtility */,
-				0A3A5B3C2196AFA2009526F0 /* UIViewUtility */,
 				0AC33DA52149397700A3DFAE /* CustomerTimer */,
 				0A45E694210AE2C80061BA14 /* Runtime */,
 				0A13CF9620CC0CE70071F0D9 /* Download */,
@@ -293,6 +293,14 @@
 				0A3A5B602196BD04009526F0 /* AppEnum.h */,
 			);
 			path = Const;
+			sourceTree = "<group>";
+		};
+		0A3A5B612196BE7E009526F0 /* ViewReleated */ = {
+			isa = PBXGroup;
+			children = (
+				0A3A5B3C2196AFA2009526F0 /* UIViewUtility */,
+			);
+			path = ViewReleated;
 			sourceTree = "<group>";
 		};
 		0A45E694210AE2C80061BA14 /* Runtime */ = {
