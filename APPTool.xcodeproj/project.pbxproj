@@ -113,6 +113,7 @@
 		0A13CF6420C644E70071F0D9 /* APPTool */ = {
 			isa = PBXGroup;
 			children = (
+				0A3A5B502196B845009526F0 /* Classes */,
 				0A13CF9420CABEFC0071F0D9 /* Header */,
 				0A13CF8E20CAB8540071F0D9 /* Macro */,
 				0A13CF8620C6F9500071F0D9 /* Common */,
@@ -152,7 +153,6 @@
 				0A3A5B432196B3A0009526F0 /* StringUtility */,
 				0A3A5B3C2196AFA2009526F0 /* UIViewUtility */,
 				0AC33DA52149397700A3DFAE /* CustomerTimer */,
-				0ABAFB22213D876700F8AF0C /* Dispatch */,
 				0A45E694210AE2C80061BA14 /* Runtime */,
 				0A13CF9620CC0CE70071F0D9 /* Download */,
 				0A13CF8D20C6FB620071F0D9 /* Database */,
@@ -239,6 +239,23 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
+		0A3A5B502196B845009526F0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0A3A5B512196B85F009526F0 /* GCDReleatedTest */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0A3A5B512196B85F009526F0 /* GCDReleatedTest */ = {
+			isa = PBXGroup;
+			children = (
+				0ABAFB23213D8B3E00F8AF0C /* DispatchTestVC.h */,
+				0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */,
+			);
+			path = GCDReleatedTest;
+			sourceTree = "<group>";
+		};
 		0A45E694210AE2C80061BA14 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,15 +275,6 @@
 				0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */,
 			);
 			path = Statics;
-			sourceTree = "<group>";
-		};
-		0ABAFB22213D876700F8AF0C /* Dispatch */ = {
-			isa = PBXGroup;
-			children = (
-				0ABAFB23213D8B3E00F8AF0C /* DispatchTestVC.h */,
-				0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */,
-			);
-			path = Dispatch;
 			sourceTree = "<group>";
 		};
 		0AC33DA52149397700A3DFAE /* CustomerTimer */ = {
