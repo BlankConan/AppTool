@@ -12,7 +12,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-#import "PathMacro.h"
-#import "DebugMacro.h"
+#import "AppResource.h"
+#import "AppDebug.h"
 
 #endif /* AppTool_pch */
