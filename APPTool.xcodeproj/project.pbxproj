@@ -19,6 +19,9 @@
 		0A3A5B462196B3C3009526F0 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B452196B3C3009526F0 /* NSString+MD5.m */; };
 		0A3A5B4B2196B4AA009526F0 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B4A2196B4AA009526F0 /* NSString+Size.m */; };
 		0A3A5B4F2196B6B8009526F0 /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B4E2196B6B8009526F0 /* NSString+Date.m */; };
+		0A3A5B552196B966009526F0 /* Dispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B542196B966009526F0 /* Dispatcher.m */; };
+		0A3A5B582196B97B009526F0 /* AppJsonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B572196B97B009526F0 /* AppJsonTool.m */; };
+		0A3A5B5B2196BA28009526F0 /* DispatcherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B592196BA28009526F0 /* DispatcherManager.m */; };
 		0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */; };
 		0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E699210B29930061BA14 /* UIControl+Statics.m */; };
 		0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */; };
@@ -55,6 +58,12 @@
 		0A3A5B4A2196B4AA009526F0 /* NSString+Size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
 		0A3A5B4D2196B6B8009526F0 /* NSString+Date.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
 		0A3A5B4E2196B6B8009526F0 /* NSString+Date.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
+		0A3A5B532196B966009526F0 /* Dispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dispatcher.h; sourceTree = "<group>"; };
+		0A3A5B542196B966009526F0 /* Dispatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dispatcher.m; sourceTree = "<group>"; };
+		0A3A5B562196B97B009526F0 /* AppJsonTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppJsonTool.h; sourceTree = "<group>"; };
+		0A3A5B572196B97B009526F0 /* AppJsonTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppJsonTool.m; sourceTree = "<group>"; };
+		0A3A5B592196BA28009526F0 /* DispatcherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatcherManager.m; sourceTree = "<group>"; };
+		0A3A5B5A2196BA28009526F0 /* DispatcherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatcherManager.h; sourceTree = "<group>"; };
 		0A45E695210AE2FA0061BA14 /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
 		0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
 		0A45E698210B29930061BA14 /* UIControl+Statics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Statics.h"; sourceTree = "<group>"; };
@@ -150,6 +159,7 @@
 		0A13CF8620C6F9500071F0D9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0A3A5B522196B945009526F0 /* DispatcherManager */,
 				0A3A5B432196B3A0009526F0 /* StringUtility */,
 				0A3A5B3C2196AFA2009526F0 /* UIViewUtility */,
 				0AC33DA52149397700A3DFAE /* CustomerTimer */,
@@ -254,6 +264,19 @@
 				0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */,
 			);
 			path = GCDReleatedTest;
+			sourceTree = "<group>";
+		};
+		0A3A5B522196B945009526F0 /* DispatcherManager */ = {
+			isa = PBXGroup;
+			children = (
+				0A3A5B532196B966009526F0 /* Dispatcher.h */,
+				0A3A5B542196B966009526F0 /* Dispatcher.m */,
+				0A3A5B5A2196BA28009526F0 /* DispatcherManager.h */,
+				0A3A5B592196BA28009526F0 /* DispatcherManager.m */,
+				0A3A5B562196B97B009526F0 /* AppJsonTool.h */,
+				0A3A5B572196B97B009526F0 /* AppJsonTool.m */,
+			);
+			path = DispatcherManager;
 			sourceTree = "<group>";
 		};
 		0A45E694210AE2C80061BA14 /* Runtime */ = {
@@ -419,6 +442,8 @@
 				0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */,
 				0A13CF8520C645AC0071F0D9 /* BaseTabBarController.m in Sources */,
 				0A3A5B4B2196B4AA009526F0 /* NSString+Size.m in Sources */,
+				0A3A5B5B2196BA28009526F0 /* DispatcherManager.m in Sources */,
+				0A3A5B582196B97B009526F0 /* AppJsonTool.m in Sources */,
 				0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */,
 				0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */,
 				0A3A5B462196B3C3009526F0 /* NSString+MD5.m in Sources */,
@@ -428,6 +453,7 @@
 				0A3A5B4F2196B6B8009526F0 /* NSString+Date.m in Sources */,
 				0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */,
 				0A13CF7E20C6453D0071F0D9 /* RootVC.m in Sources */,
+				0A3A5B552196B966009526F0 /* Dispatcher.m in Sources */,
 				0A13CF7520C644E90071F0D9 /* main.m in Sources */,
 				0A13CF6720C644E70071F0D9 /* AppDelegate.m in Sources */,
 			);
