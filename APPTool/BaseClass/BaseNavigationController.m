@@ -7,6 +7,7 @@
 //
 
 #import "BaseNavigationController.h"
+#import "AppBaseVC.h"
 
 @interface BaseNavigationController ()
 
@@ -19,10 +20,20 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark Pop/push
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    [super pushViewController:viewController animated:animated];
 }
+
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated {
+   return [super popViewControllerAnimated:animated];
+}
+
+- (NSArray<UIViewController *> *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
+   return [super popToViewController:viewController animated:animated];
+}
+
 
 
 @end

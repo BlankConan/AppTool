@@ -19,14 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSUncaughtExceptionHandler
+//    NSSetUncaughtExceptionHandler(<#NSUncaughtExceptionHandler * _Nullable#>)
     self.view.backgroundColor = [UIColor orangeColor];
     
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    DispatchTestVC *vc = [[DispatchTestVC alloc] init];
-    [self presentViewController:vc animated:YES completion:nil];
 }
 
 
