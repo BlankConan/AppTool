@@ -29,7 +29,60 @@
     self.window.rootViewController = [[RootVC alloc] init];
     [self.window makeKeyAndVisible];
     
+    if ([self compareVersionA:@"1.2.2" versionB:@"1.2"]) {
+        NSLog(@"第一个大于第二个");
+    } else {
+        NSLog(@"第二个大于第一个");
+    }
+    
     return YES;
+}
+
+
+/**
+ 比较两个版本大小
+ 
+ @param versionA 版本1
+ @param versionB 版本2
+ @return 返回YES说明前者大于后者
+ */
+- (BOOL)compareVersionA:(NSString *)versionA versionB:(NSString *)versionB {
+    
+    int numA = 0, numB = 0, indexA = 0, indexB = 0;
+    while (1) {
+        if (indexA < versionA.length) {
+            while (1) {
+                int character = [versionA characterAtIndex:indexA];
+                ++indexA;
+                if (character >= 48 && character <= 57) {
+                    numA = character;
+                    break;
+                }
+            }
+        } else {
+            numA = -1;
+        }
+        if (indexB < versionB.length) {
+            while (1) {
+                int character = [versionB characterAtIndex:indexB];
+                ++indexB;
+                if (character >= 48 && character <= 57) {
+                    numB = character;
+                    break;
+                }
+                
+            }
+        } else {
+            numB = -1;
+        }
+        if (numA == numB && (numA != -1 || numB != -1)) {
+            continue;
+        } else {
+            break;
+        }
+    }
+    
+    return numA > numB;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

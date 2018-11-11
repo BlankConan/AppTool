@@ -6,7 +6,6 @@
 //  Copyright © 2018年 liu gangyi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
 @interface UIGestureRecognizer (Statics)
 

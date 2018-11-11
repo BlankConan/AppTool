@@ -6,7 +6,7 @@
 //  Copyright © 2018年 liu gangyi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+
 
 /**
  模拟系统响应链传递
