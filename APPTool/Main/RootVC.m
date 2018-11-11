@@ -8,12 +8,10 @@
 
 #import "RootVC.h"
 #import "DispatchTestVC.h"
-#import "TransitionAnimationDelegate.h"
-#import "AnimationController.h"
+
 
 @interface RootVC ()
 
-@property (nonatomic, strong) TransitionAnimationDelegate *aaaa;
 
 @end
 
@@ -21,18 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//    NSSetUncaughtExceptionHandler(<#NSUncaughtExceptionHandler * _Nullable#>)
     self.view.backgroundColor = [UIColor orangeColor];
-    self.aaaa = [[TransitionAnimationDelegate alloc] init];
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    DispatchTestVC *vc = [[DispatchTestVC alloc] init];
-//    [self presentViewController:vc animated:YES completion:nil];
     
-    AnimationController *vc = [[AnimationController alloc] init];
-    vc.transitioningDelegate = self.aaaa;
-    [self presentViewController:vc animated:YES completion:nil];
 }
 
 

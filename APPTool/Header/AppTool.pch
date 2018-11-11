@@ -16,8 +16,8 @@
 
 #pragma mark Project
 
-#import "PathMacro.h"
-#import "DebugMacro.h"
+#import "AppResource.h"
+#import "AppDebug.h"
 
 
 #endif /* AppTool_pch */
