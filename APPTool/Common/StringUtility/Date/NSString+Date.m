@@ -53,7 +53,6 @@
  *    @brief    转换时间为字符串.
  *
  *    @param    date        时间.
- *    @param    formatter   时间格式.
  *
  */
 + (NSString *)stringFromDate:(NSDate *)date {
@@ -79,12 +78,12 @@
     return stringDate;
 }
 
+
 /**
- *    @brief    转换时间.
- *
- *    @param    date        时间.
- *    @param    formatter   时间格式.
- *
+ 时间标记
+
+ @param timeString 标准时间
+ @return 时间字符串
  */
 + (NSString *)transmitTime:(NSString *)timeString {
     NSDateFormatter * dateFormater = [[NSDateFormatter alloc] init];

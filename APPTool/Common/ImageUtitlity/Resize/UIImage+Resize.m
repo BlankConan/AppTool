@@ -1,18 +1,18 @@
 //
-//  UIImage+Handle.m
+//  UIImage+Resize.m
 //  APPTool
 //
-//  Created by liugangyi on 2018/11/8.
-//  Copyright © 2018 liu gangyi. All rights reserved.
+//  Created by liugangyi on 2018/11/12.
+//  Copyright © 2018年 liu gangyi. All rights reserved.
 //
 
-#import "UIImage+Handle.h"
+#import "UIImage+Resize.h"
 
-@implementation UIImage (Handle)
+@implementation UIImage (Resize)
 
-- (UIImage *)scaleImage:(UIImage *)image newSize:(CGSize)newSize {
++ (UIImage *)scaleImage:(UIImage *)image newSize:(CGSize)newSize {
     
-    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0);
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
     [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     UIImage *destinationImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -33,6 +33,14 @@
     CGImageRelease(imageRef);
     CFRelease(ref);
     
+    return image;
+}
+
+- (UIImage *)resizeToNewSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     return image;
 }
 

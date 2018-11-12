@@ -23,13 +23,15 @@
 		0A3A5B582196B97B009526F0 /* AppJsonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B572196B97B009526F0 /* AppJsonTool.m */; };
 		0A3A5B5B2196BA28009526F0 /* DispatcherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B592196BA28009526F0 /* DispatcherManager.m */; };
 		0A3A5B642196BFE5009526F0 /* AppBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B632196BFE5009526F0 /* AppBaseVC.m */; };
+		0A437806219916C1001B5464 /* UIImage+Cornor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A43780321991599001B5464 /* UIImage+Cornor.m */; };
 		0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */; };
 		0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E699210B29930061BA14 /* UIControl+Statics.m */; };
 		0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */; };
+		0A73AFC521990BA9008423C3 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC421990BA9008423C3 /* UIImage+Resize.m */; };
+		0A73AFC921990DE9008423C3 /* UIImage+Pure.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC821990DE9008423C3 /* UIImage+Pure.m */; };
 		0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */; };
 		0AC33DA82149398600A3DFAE /* AppTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33DA72149398600A3DFAE /* AppTimer.m */; };
 		0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8B2212B2F9E00F46BD5 /* UIView+UIResponder.m */; };
-		0AFC42D12198699F00048F14 /* ImageHandle in Resources */ = {isa = PBXBuildFile; fileRef = 0AFC42CF2198699F00048F14 /* ImageHandle */; };
 		C43742989EA4141B1A77CCC8 /* libPods-APPTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 489F03586AF484002750922B /* libPods-APPTool.a */; };
 /* End PBXBuildFile section */
 
@@ -72,19 +74,24 @@
 		0A3A5B602196BD04009526F0 /* AppEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppEnum.h; sourceTree = "<group>"; };
 		0A3A5B622196BFE5009526F0 /* AppBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBaseVC.h; sourceTree = "<group>"; };
 		0A3A5B632196BFE5009526F0 /* AppBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBaseVC.m; sourceTree = "<group>"; };
+		0A43780221991599001B5464 /* UIImage+Cornor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cornor.h"; sourceTree = "<group>"; };
+		0A43780321991599001B5464 /* UIImage+Cornor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cornor.m"; sourceTree = "<group>"; };
 		0A45E695210AE2FA0061BA14 /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
 		0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
 		0A45E698210B29930061BA14 /* UIControl+Statics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Statics.h"; sourceTree = "<group>"; };
 		0A45E699210B29930061BA14 /* UIControl+Statics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Statics.m"; sourceTree = "<group>"; };
 		0A45E69D210C197E0061BA14 /* UIGestureRecognizer+Statics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Statics.h"; sourceTree = "<group>"; };
 		0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Statics.m"; sourceTree = "<group>"; };
+		0A73AFC321990BA9008423C3 /* UIImage+Resize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		0A73AFC421990BA9008423C3 /* UIImage+Resize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		0A73AFC721990DE9008423C3 /* UIImage+Pure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Pure.h"; sourceTree = "<group>"; };
+		0A73AFC821990DE9008423C3 /* UIImage+Pure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Pure.m"; sourceTree = "<group>"; };
 		0ABAFB23213D8B3E00F8AF0C /* DispatchTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchTestVC.h; sourceTree = "<group>"; };
 		0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DispatchTestVC.m; sourceTree = "<group>"; };
 		0AC33DA62149398600A3DFAE /* AppTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTimer.h; sourceTree = "<group>"; };
 		0AC33DA72149398600A3DFAE /* AppTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTimer.m; sourceTree = "<group>"; };
 		0AF3A8B1212B2F9E00F46BD5 /* UIView+UIResponder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+UIResponder.h"; sourceTree = "<group>"; };
 		0AF3A8B2212B2F9E00F46BD5 /* UIView+UIResponder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIResponder.m"; sourceTree = "<group>"; };
-		0AFC42CF2198699F00048F14 /* ImageHandle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImageHandle; sourceTree = "<group>"; };
 		489F03586AF484002750922B /* libPods-APPTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APPTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A03D62366E7E1EDED80B82C /* Pods-APPTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPTool/Pods-APPTool.debug.xcconfig"; sourceTree = "<group>"; };
 		C6A5894A5D6D2D963D78FD65 /* Pods-APPTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPTool/Pods-APPTool.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,7 +176,7 @@
 		0A13CF8620C6F9500071F0D9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				0AFC42CF2198699F00048F14 /* ImageHandle */,
+				0A73AFC121990B76008423C3 /* ImageUtitlity */,
 				0A3A5BEC2196CB62009526F0 /* AppRequest */,
 				0A3A5B612196BE7E009526F0 /* ViewReleated */,
 				0A3A5B5F2196BCE5009526F0 /* Const */,
@@ -319,6 +326,15 @@
 			path = AppBannerView;
 			sourceTree = "<group>";
 		};
+		0A43780121991580001B5464 /* Cornor */ = {
+			isa = PBXGroup;
+			children = (
+				0A43780221991599001B5464 /* UIImage+Cornor.h */,
+				0A43780321991599001B5464 /* UIImage+Cornor.m */,
+			);
+			path = Cornor;
+			sourceTree = "<group>";
+		};
 		0A45E694210AE2C80061BA14 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +354,34 @@
 				0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */,
 			);
 			path = Statics;
+			sourceTree = "<group>";
+		};
+		0A73AFC121990B76008423C3 /* ImageUtitlity */ = {
+			isa = PBXGroup;
+			children = (
+				0A43780121991580001B5464 /* Cornor */,
+				0A73AFC621990C14008423C3 /* Pure */,
+				0A73AFC221990B8C008423C3 /* Resize */,
+			);
+			path = ImageUtitlity;
+			sourceTree = "<group>";
+		};
+		0A73AFC221990B8C008423C3 /* Resize */ = {
+			isa = PBXGroup;
+			children = (
+				0A73AFC321990BA9008423C3 /* UIImage+Resize.h */,
+				0A73AFC421990BA9008423C3 /* UIImage+Resize.m */,
+			);
+			path = Resize;
+			sourceTree = "<group>";
+		};
+		0A73AFC621990C14008423C3 /* Pure */ = {
+			isa = PBXGroup;
+			children = (
+				0A73AFC721990DE9008423C3 /* UIImage+Pure.h */,
+				0A73AFC821990DE9008423C3 /* UIImage+Pure.m */,
+			);
+			path = Pure;
 			sourceTree = "<group>";
 		};
 		0AC33DA52149397700A3DFAE /* CustomerTimer */ = {
@@ -445,7 +489,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A13CF7220C644E90071F0D9 /* LaunchScreen.storyboard in Resources */,
-				0AFC42D12198699F00048F14 /* ImageHandle in Resources */,
 				0A13CF6F20C644E90071F0D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,7 +521,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A437806219916C1001B5464 /* UIImage+Cornor.m in Sources */,
 				0A13CF8C20C6FB5D0071F0D9 /* DatabaseTool.m in Sources */,
+				0A73AFC921990DE9008423C3 /* UIImage+Pure.m in Sources */,
 				0A3A5B3F2196AFCD009526F0 /* UIView+Utility.m in Sources */,
 				0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */,
 				0A13CF8520C645AC0071F0D9 /* BaseTabBarController.m in Sources */,
@@ -498,6 +543,7 @@
 				0A3A5B552196B966009526F0 /* Dispatcher.m in Sources */,
 				0A13CF7520C644E90071F0D9 /* main.m in Sources */,
 				0A13CF6720C644E70071F0D9 /* AppDelegate.m in Sources */,
+				0A73AFC521990BA9008423C3 /* UIImage+Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +680,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "${SRCROOT}/APPTool/Header/AppTool.pch";
 				INFOPLIST_FILE = APPTool/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -654,6 +701,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "${SRCROOT}/APPTool/Header/AppTool.pch";
 				INFOPLIST_FILE = APPTool/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

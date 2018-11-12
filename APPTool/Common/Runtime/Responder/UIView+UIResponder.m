@@ -18,25 +18,25 @@
  @param originalSelector 原方法SEL
  @param swizzlingSelector 替换方法SEL
  */
-static inline void swizzling_Method(Class cls, SEL originalSelector, SEL swizzlingSelector) {
-    
-    Method originalMethod = nil;
-    Method swizzlingMethod = nil;
-    if (class_isMetaClass(cls)) {
-        originalMethod = class_getClassMethod(cls, originalSelector);
-        swizzlingMethod = class_getClassMethod(cls, swizzlingSelector);
-    } else {
-        originalMethod = class_getInstanceMethod(cls, originalSelector);
-        swizzlingMethod = class_getInstanceMethod(cls, swizzlingSelector);
-    }
-    
-    BOOL success = class_addMethod(cls, originalSelector, method_getImplementation(swizzlingMethod), method_getTypeEncoding(swizzlingMethod));
-    if (success) {
-        class_replaceMethod(cls, swizzlingSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-    } else {
-        method_exchangeImplementations(originalMethod, swizzlingMethod);
-    }
-}
+//static inline void swizzling_Method(Class cls, SEL originalSelector, SEL swizzlingSelector) {
+//    
+//    Method originalMethod = nil;
+//    Method swizzlingMethod = nil;
+//    if (class_isMetaClass(cls)) {
+//        originalMethod = class_getClassMethod(cls, originalSelector);
+//        swizzlingMethod = class_getClassMethod(cls, swizzlingSelector);
+//    } else {
+//        originalMethod = class_getInstanceMethod(cls, originalSelector);
+//        swizzlingMethod = class_getInstanceMethod(cls, swizzlingSelector);
+//    }
+//    
+//    BOOL success = class_addMethod(cls, originalSelector, method_getImplementation(swizzlingMethod), method_getTypeEncoding(swizzlingMethod));
+//    if (success) {
+//        class_replaceMethod(cls, swizzlingSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+//    } else {
+//        method_exchangeImplementations(originalMethod, swizzlingMethod);
+//    }
+//}
 
 @implementation UIView (UIResponder)
 
