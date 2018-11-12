@@ -10,6 +10,21 @@
 
 @implementation AppRequest
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.ignoreCache = YES;
+        self.requestTimeoutInterval = 15;
+    }
+    return self;
+}
+
+
+//- (Class)jsonModeClass:(NSDictionary *)dictResult {
+//
+//}
+
 #pragma mark overrid
 
 - (void)start {
