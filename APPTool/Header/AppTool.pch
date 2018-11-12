@@ -19,5 +19,9 @@
 #import "AppResource.h"
 #import "AppDebug.h"
 
+#pragma mark Third SDK
+
+#import "AFNetworking.h"
+
 
 #endif /* AppTool_pch */

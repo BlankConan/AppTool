@@ -24,11 +24,15 @@
 		0A3A5B5B2196BA28009526F0 /* DispatcherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B592196BA28009526F0 /* DispatcherManager.m */; };
 		0A3A5B642196BFE5009526F0 /* AppBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B632196BFE5009526F0 /* AppBaseVC.m */; };
 		0A437806219916C1001B5464 /* UIImage+Cornor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A43780321991599001B5464 /* UIImage+Cornor.m */; };
+		0A43780F219949AC001B5464 /* AppBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A43780E219949AC001B5464 /* AppBaseRequest.m */; };
+		0A437812219949C8001B5464 /* AppRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A437811219949C8001B5464 /* AppRequest.m */; };
+		0A43781521994E0B001B5464 /* APPNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A43781421994E0B001B5464 /* APPNetworkAgent.m */; };
 		0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */; };
 		0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E699210B29930061BA14 /* UIControl+Statics.m */; };
 		0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */; };
 		0A73AFC521990BA9008423C3 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC421990BA9008423C3 /* UIImage+Resize.m */; };
 		0A73AFC921990DE9008423C3 /* UIImage+Pure.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC821990DE9008423C3 /* UIImage+Pure.m */; };
+		0A9DB80B219989BA00C7E156 /* AppResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DB80A219989BA00C7E156 /* AppResult.m */; };
 		0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */; };
 		0AC33DA82149398600A3DFAE /* AppTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33DA72149398600A3DFAE /* AppTimer.m */; };
 		0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8B2212B2F9E00F46BD5 /* UIView+UIResponder.m */; };
@@ -76,6 +80,12 @@
 		0A3A5B632196BFE5009526F0 /* AppBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBaseVC.m; sourceTree = "<group>"; };
 		0A43780221991599001B5464 /* UIImage+Cornor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cornor.h"; sourceTree = "<group>"; };
 		0A43780321991599001B5464 /* UIImage+Cornor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cornor.m"; sourceTree = "<group>"; };
+		0A43780D219949AC001B5464 /* AppBaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBaseRequest.h; sourceTree = "<group>"; };
+		0A43780E219949AC001B5464 /* AppBaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBaseRequest.m; sourceTree = "<group>"; };
+		0A437810219949C8001B5464 /* AppRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppRequest.h; sourceTree = "<group>"; };
+		0A437811219949C8001B5464 /* AppRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppRequest.m; sourceTree = "<group>"; };
+		0A43781321994E0B001B5464 /* APPNetworkAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPNetworkAgent.h; sourceTree = "<group>"; };
+		0A43781421994E0B001B5464 /* APPNetworkAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPNetworkAgent.m; sourceTree = "<group>"; };
 		0A45E695210AE2FA0061BA14 /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
 		0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
 		0A45E698210B29930061BA14 /* UIControl+Statics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Statics.h"; sourceTree = "<group>"; };
@@ -86,6 +96,8 @@
 		0A73AFC421990BA9008423C3 /* UIImage+Resize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		0A73AFC721990DE9008423C3 /* UIImage+Pure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Pure.h"; sourceTree = "<group>"; };
 		0A73AFC821990DE9008423C3 /* UIImage+Pure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Pure.m"; sourceTree = "<group>"; };
+		0A9DB809219989BA00C7E156 /* AppResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppResult.h; sourceTree = "<group>"; };
+		0A9DB80A219989BA00C7E156 /* AppResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppResult.m; sourceTree = "<group>"; };
 		0ABAFB23213D8B3E00F8AF0C /* DispatchTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchTestVC.h; sourceTree = "<group>"; };
 		0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DispatchTestVC.m; sourceTree = "<group>"; };
 		0AC33DA62149398600A3DFAE /* AppTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTimer.h; sourceTree = "<group>"; };
@@ -176,8 +188,8 @@
 		0A13CF8620C6F9500071F0D9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0A43780C2199497E001B5464 /* AppRequest */,
 				0A73AFC121990B76008423C3 /* ImageUtitlity */,
-				0A3A5BEC2196CB62009526F0 /* AppRequest */,
 				0A3A5B612196BE7E009526F0 /* ViewReleated */,
 				0A3A5B5F2196BCE5009526F0 /* Const */,
 				0A13CF8E20CAB8540071F0D9 /* Config */,
@@ -312,13 +324,6 @@
 			path = ViewReleated;
 			sourceTree = "<group>";
 		};
-		0A3A5BEC2196CB62009526F0 /* AppRequest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppRequest;
-			sourceTree = "<group>";
-		};
 		0A3A5BEE2196CBD1009526F0 /* AppBannerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +338,21 @@
 				0A43780321991599001B5464 /* UIImage+Cornor.m */,
 			);
 			path = Cornor;
+			sourceTree = "<group>";
+		};
+		0A43780C2199497E001B5464 /* AppRequest */ = {
+			isa = PBXGroup;
+			children = (
+				0A437810219949C8001B5464 /* AppRequest.h */,
+				0A437811219949C8001B5464 /* AppRequest.m */,
+				0A9DB809219989BA00C7E156 /* AppResult.h */,
+				0A9DB80A219989BA00C7E156 /* AppResult.m */,
+				0A43780D219949AC001B5464 /* AppBaseRequest.h */,
+				0A43780E219949AC001B5464 /* AppBaseRequest.m */,
+				0A43781321994E0B001B5464 /* APPNetworkAgent.h */,
+				0A43781421994E0B001B5464 /* APPNetworkAgent.m */,
+			);
+			path = AppRequest;
 			sourceTree = "<group>";
 		};
 		0A45E694210AE2C80061BA14 /* Runtime */ = {
@@ -521,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9DB80B219989BA00C7E156 /* AppResult.m in Sources */,
 				0A437806219916C1001B5464 /* UIImage+Cornor.m in Sources */,
 				0A13CF8C20C6FB5D0071F0D9 /* DatabaseTool.m in Sources */,
 				0A73AFC921990DE9008423C3 /* UIImage+Pure.m in Sources */,
@@ -535,14 +556,17 @@
 				0A3A5B462196B3C3009526F0 /* NSString+MD5.m in Sources */,
 				0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */,
 				0A3A5B642196BFE5009526F0 /* AppBaseVC.m in Sources */,
+				0A43781521994E0B001B5464 /* APPNetworkAgent.m in Sources */,
 				0A13CF8220C645780071F0D9 /* BaseNavigationController.m in Sources */,
 				0AC33DA82149398600A3DFAE /* AppTimer.m in Sources */,
+				0A43780F219949AC001B5464 /* AppBaseRequest.m in Sources */,
 				0A3A5B4F2196B6B8009526F0 /* NSString+Date.m in Sources */,
 				0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */,
 				0A13CF7E20C6453D0071F0D9 /* RootVC.m in Sources */,
 				0A3A5B552196B966009526F0 /* Dispatcher.m in Sources */,
 				0A13CF7520C644E90071F0D9 /* main.m in Sources */,
 				0A13CF6720C644E70071F0D9 /* AppDelegate.m in Sources */,
+				0A437812219949C8001B5464 /* AppRequest.m in Sources */,
 				0A73AFC521990BA9008423C3 /* UIImage+Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
