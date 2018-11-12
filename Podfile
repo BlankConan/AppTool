@@ -9,4 +9,5 @@ target 'APPTool' do
   pod 'FMDB', '~> 2.7.2'
   pod 'AFNetworking', '~> 3.2.0'
   pod 'Aspects', '~> 1.4.1'
+  pod 'YYModel', '~> 1.0.4'
 end
