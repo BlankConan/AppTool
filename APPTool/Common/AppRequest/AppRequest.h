@@ -14,16 +14,26 @@
  App 请求类
  每个接口继承AppRequest
  每个接口重载 requesturl
+ 每个接口重载 arguments
+ @optional
+ 每个接口重载 baseReqeustUrl
+ 
  */
 @interface AppRequest : AppBaseRequest
 
-// data
+/// data.
 @property (nonatomic, strong) AppResult *result;
 
-// yes - ignore cache
+/// yes - ignore cache.
 @property (nonatomic, assign) BOOL ignoreCache;
 
-- (Class)jsonModeClass:(NSDictionary *)dictResult;
+// 子类需要重载，返回的class都是result的子类
+- (Class)jsonModeClass;
+
+/**
+ 对结果进行缓存
+ */
+- (void)cacheResult;
 
 @end
 

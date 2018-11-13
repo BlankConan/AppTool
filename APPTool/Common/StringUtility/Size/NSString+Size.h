@@ -75,6 +75,6 @@
  @param versionB 版本2
  @return 返回YES说明前者大于后者
  */
-- (BOOL)compareVersionA:(NSString *)versionA versionB:(NSString *)versionB;
++ (BOOL)compareVersionA:(NSString *)versionA versionB:(NSString *)versionB;
 
 @end

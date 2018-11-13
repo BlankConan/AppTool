@@ -8,14 +8,8 @@
 
 #import "AppDelegate.h"
 #import "RootVC.h"
-#import "NSObject+Runtime.h"
-#import <objc/runtime.h>
-#import "UIControl+Statics.h"
+#import "AppRequest.h"
 @interface AppDelegate ()
-{
-    NSString *_ssss;
-}
-@property (nonatomic, strong) NSString *nameA;
 
 @end
 
@@ -28,7 +22,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[RootVC alloc] init];
     [self.window makeKeyAndVisible];
-    
+
     return YES;
 }
 

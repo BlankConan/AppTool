@@ -10,4 +10,15 @@
 
 @implementation AppResult
 
+//+ (instancetype)parseTotalData:(NSDictionary *)jsonDic {
+//
+//
+//
+//
+//
+//
+//}
+
+
+
 @end

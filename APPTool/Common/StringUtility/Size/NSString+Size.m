@@ -11,8 +11,7 @@
 @implementation NSString (Size)
 
 - (CGSize)sizeWithFontCompatible:(UIFont *)font {
-    if([self respondsToSelector:@selector(sizeWithAttributes:)] == YES)
-    {
+    if([self respondsToSelector:@selector(sizeWithAttributes:)] == YES) {
         NSDictionary *dictionaryAttributes = @{NSFontAttributeName:font};
         CGSize stringSize = [self sizeWithAttributes:dictionaryAttributes];
         return CGSizeMake(ceil(stringSize.width), ceil(stringSize.height));
@@ -55,8 +54,7 @@
 }
 
 - (CGSize)sizeWithFontCompatible:(UIFont *)font constrainedToSize:(CGSize)size {
-    if([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)] == YES)
-    {
+    if([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)] == YES) {
         NSDictionary *dictionaryAttributes = @{NSFontAttributeName:font};
         CGRect stringRect = [self boundingRectWithSize:size
                                                options:NSStringDrawingUsesLineFragmentOrigin
@@ -64,9 +62,7 @@
                                                context:nil];
         
         return CGSizeMake(ceil(stringRect.size.width), ceil(stringRect.size.height));
-    }
-    else
-    {
+    } else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
         return [self sizeWithFont:font constrainedToSize:size];
@@ -76,8 +72,7 @@
 
 - (CGSize)sizeWithFontCompatible:(UIFont *)font constrainedToSize:(CGSize)size
                    lineBreakMode:(NSLineBreakMode)lineBreakMode {
-    if([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)] == YES)
-    {
+    if([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)] == YES) {
         NSDictionary *dictionaryAttributes = @{NSFontAttributeName:font,};
         CGRect stringRect = [self boundingRectWithSize:size
                                                options:NSStringDrawingUsesLineFragmentOrigin
@@ -85,9 +80,7 @@
                                                context:nil];
         
         return CGSizeMake(ceil(stringRect.size.width), ceil(stringRect.size.height));
-    }
-    else
-    {
+    } else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
         return [self sizeWithFont:font constrainedToSize:size lineBreakMode:lineBreakMode];
@@ -96,13 +89,10 @@
 }
 
 - (void)drawAtPointCompatible:(CGPoint)point withFont:(UIFont *)font {
-    if([self respondsToSelector:@selector(drawAtPoint:withAttributes:)] == YES)
-    {
+    if([self respondsToSelector:@selector(drawAtPoint:withAttributes:)] == YES) {
         NSDictionary *dictionaryAttributes = @{NSFontAttributeName:font};
         [self drawAtPoint:point withAttributes:dictionaryAttributes];
-    }
-    else
-    {
+    } else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [self drawAtPoint:point withFont:font];
@@ -111,16 +101,13 @@
 }
 
 - (void)drawInRectCompatible:(CGRect)rect withFont:(UIFont *)font {
-    if([self respondsToSelector:@selector(drawWithRect:options:attributes:context:)] == YES)
-    {
+    if([self respondsToSelector:@selector(drawWithRect:options:attributes:context:)] == YES) {
         NSDictionary *dictionaryAttributes = @{NSFontAttributeName:font};
         [self drawWithRect:rect
                    options:NSStringDrawingUsesLineFragmentOrigin
                 attributes:dictionaryAttributes
                    context:nil];
-    }
-    else
-    {
+    } else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [self drawInRect:rect withFont:font];
@@ -131,8 +118,7 @@
 - (void)drawInRectCompatible:(CGRect)rect withFont:(UIFont *)font
                lineBreakMode:(NSLineBreakMode)lineBreakMode
                    alignment:(NSTextAlignment)alignment {
-    if([self respondsToSelector:@selector(drawWithRect:options:attributes:context:)] == YES)
-    {
+    if([self respondsToSelector:@selector(drawWithRect:options:attributes:context:)] == YES) {
         NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
         [paragraphStyle setAlignment:alignment];
         NSDictionary *dictionaryAttributes = @{NSFontAttributeName:font,
@@ -141,9 +127,7 @@
                    options:NSStringDrawingUsesLineFragmentOrigin
                 attributes:dictionaryAttributes
                    context:nil];
-    }
-    else
-    {
+    } else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [self drawInRect:rect withFont:font lineBreakMode:lineBreakMode alignment:alignment];
@@ -154,7 +138,6 @@
 - (CGFloat)heightWithStringAttribute:(NSDictionary <NSString *, id> *)attribute fixedWidth:(CGFloat)width {
     
     NSParameterAssert(attribute);
-    
     CGFloat height = 0;
     
     if (self.length) {
@@ -199,7 +182,7 @@
  @param versionB 版本2
  @return 返回YES说明前者大于后者
  */
-- (BOOL)compareVersionA:(NSString *)versionA versionB:(NSString *)versionB {
++ (BOOL)compareVersionA:(NSString *)versionA versionB:(NSString *)versionB {
     
     int numA = 0, numB = 0, indexA = 0, indexB = 0;
     while (1) {

@@ -41,14 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)cancelAllRequest;
 
-/**
- 根据request生成请求urlString
-
- @param request 请求子类
- @return 生成url
- */
-- (NSString *)buildRequestUrlStr:(AppBaseRequest *)request;
-
 @end
 
 NS_ASSUME_NONNULL_END

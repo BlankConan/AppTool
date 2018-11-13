@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, AppRequestSerializerType) {
     AppRequestSerializerJSON,
 };
 
-// 构造block
+// 构造POST block
 typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 
 /**
@@ -73,50 +73,50 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 
 #pragma mark Request Configure
 
-// useCDN?
+/// useCDN?.
 @property (nonatomic, assign) BOOL useCDN;
-// base -> cdnurl
+/// base -> cdnurl.
 @property (nonatomic, strong) NSString *cdnUrl;
-// base -> baseurl
+/// base -> baseurl.
 @property (nonatomic, strong) NSString *baseUrl;
-// request detail url
+///  request detail url.
 @property (nonatomic, strong) NSString *requestUrl;
 
-// request timeout
+/// request timeout.
 @property (nonatomic, assign) NSTimeInterval requestTimeoutInterval;
 
-// request arguments
+/// request arguments.
 @property (nonatomic, strong) id requestArguments;
-// request base arguments
+/// request base arguments.
 @property (nonatomic, strong) NSDictionary *requestBaseArguments;
-// request method
+/// request method.
 @property (nonatomic, assign) AppRequestMethod reqeustMethod;
-// request Serializer type
+/// request Serializer type.
 @property (nonatomic, assign) AppRequestSerializerType requestSerializerType;
 
-// header authorization
+/// header authorization.
 @property (nonatomic, copy) NSArray *requestAuthorizationHeaderFieldArray;
-// request header k-v
+/// request header k-v.
 @property (nonatomic, strong) NSDictionary *requestHeaderFieldValueDictionary;
-// build by self
-@property (nonatomic, strong) NSURLSessionDataTask *task;
+
+@property (nonatomic, copy) AFConstructingBlock constructingBodyBlock;
 
 #pragma mark - response
 
-@property (nonatomic, strong, readonly) NSDictionary *responseHeaders;
-@property (nonatomic, strong) id responseObject;
+@property (nonatomic, copy) id responseObject;
+@property (nonatomic, copy) NSDictionary *responseHeaders;
 @property (nonatomic, assign) NSInteger reponseStatusCode;
 @property (nonatomic, strong) NSError *error;
 
 
 #pragma mark - Request call back
-// delegate
+/// delegate.
 @property (nonatomic, weak) id<AppRequestDelegate> delegate;
-// success block
+/// success block.
 @property (nonatomic, copy) void (^successCompletionBlock)(AppBaseRequest *);
-// failure block
+// failure block.
 @property (nonatomic, copy) void (^failureCompletionBlock)(AppBaseRequest *);
-// progress block
+/// progress block.
 @property (nonatomic, copy) void (^progressBlock)(NSProgress *);
 
 
@@ -206,6 +206,7 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 - (void)setRequestHeaderFieldValueDictionary:(NSDictionary * _Nonnull)requestHeaderFieldValueDictionary;
 - (NSDictionary * _Nonnull)requestHeaderFieldValueDictionary;
 
+#warning liugangyi 需要修改
 /// 当POST的内容带有文件等富文本时使用
 - (AFConstructingBlock)constructingBodyBlock;
 

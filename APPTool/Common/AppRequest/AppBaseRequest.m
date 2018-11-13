@@ -22,7 +22,6 @@
         _reqeustMethod = AppRequestMethodGet;
         _requestTimeoutInterval = 60;
         _requestSerializerType = AppRequestSerializerHTTP;
-        _task = nil;
     }
     return self;
 }
@@ -38,7 +37,8 @@
 }
 
 - (BOOL)isExcuting {
-    return self.task.state == NSURLSessionTaskStateRunning;
+    return true;
+//    return self.task.state == NSURLSessionTaskStateRunning;
 }
 
 - (void)startCompletionBlockWithProgress:(void (^)(NSProgress * _Nonnull))progress
@@ -63,11 +63,11 @@
 }
 
 - (NSDictionary *)responseHeaders {
-    return ((NSHTTPURLResponse *)self.task.response).allHeaderFields;
+    return nil;
 }
 
 - (NSInteger)reponseStatusCode {
-    return ((NSHTTPURLResponse *)self.task.response).statusCode;
+    return 0;
 }
 
 #pragma mark - subclass need override
@@ -116,9 +116,8 @@
     return _useCDN;
 }
 
-
-- (AFConstructingBlock)constructingBodyBlock {
-    return nil;
+- (void)setConstructingBodyBlock:(AFConstructingBlock)constructingBodyBlock {
+    _constructingBodyBlock = constructingBodyBlock;
 }
 
 #pragma mark Private
