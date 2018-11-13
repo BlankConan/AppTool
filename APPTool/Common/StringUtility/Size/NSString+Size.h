@@ -68,4 +68,13 @@
  */
 - (CGFloat)widthWithStringAttribute:(NSDictionary <NSString *, id> *)attribute;
 
+/**
+ 比较两个版本大小
+ 
+ @param versionA 版本1
+ @param versionB 版本2
+ @return 返回YES说明前者大于后者
+ */
+- (BOOL)compareVersionA:(NSString *)versionA versionB:(NSString *)versionB;
+
 @end

@@ -16,6 +16,7 @@
     if (self) {
         self.ignoreCache = YES;
         self.requestTimeoutInterval = 15;
+        
     }
     return self;
 }
