@@ -23,6 +23,9 @@
     self.window.rootViewController = [[RootVC alloc] init];
     [self.window makeKeyAndVisible];
 
+    AppRequest *request = [[AppRequest alloc]  init];
+
+    
     return YES;
 }
 

@@ -35,6 +35,8 @@
 		0A9DB80B219989BA00C7E156 /* AppResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DB80A219989BA00C7E156 /* AppResult.m */; };
 		0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */; };
 		0AC33DA82149398600A3DFAE /* AppTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33DA72149398600A3DFAE /* AppTimer.m */; };
+		0ADDC4E1219C38E60025C825 /* AppBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADDC4E0219C38E60025C825 /* AppBatchRequest.m */; };
+		0ADDC4E4219C38FC0025C825 /* AppBatchRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADDC4E3219C38FC0025C825 /* AppBatchRequestAgent.m */; };
 		0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8B2212B2F9E00F46BD5 /* UIView+UIResponder.m */; };
 		C43742989EA4141B1A77CCC8 /* libPods-APPTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 489F03586AF484002750922B /* libPods-APPTool.a */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,10 @@
 		0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DispatchTestVC.m; sourceTree = "<group>"; };
 		0AC33DA62149398600A3DFAE /* AppTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTimer.h; sourceTree = "<group>"; };
 		0AC33DA72149398600A3DFAE /* AppTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTimer.m; sourceTree = "<group>"; };
+		0ADDC4DF219C38E60025C825 /* AppBatchRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBatchRequest.h; sourceTree = "<group>"; };
+		0ADDC4E0219C38E60025C825 /* AppBatchRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBatchRequest.m; sourceTree = "<group>"; };
+		0ADDC4E2219C38FC0025C825 /* AppBatchRequestAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBatchRequestAgent.h; sourceTree = "<group>"; };
+		0ADDC4E3219C38FC0025C825 /* AppBatchRequestAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBatchRequestAgent.m; sourceTree = "<group>"; };
 		0AF3A8B1212B2F9E00F46BD5 /* UIView+UIResponder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+UIResponder.h"; sourceTree = "<group>"; };
 		0AF3A8B2212B2F9E00F46BD5 /* UIView+UIResponder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIResponder.m"; sourceTree = "<group>"; };
 		489F03586AF484002750922B /* libPods-APPTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APPTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,6 +349,10 @@
 		0A43780C2199497E001B5464 /* AppRequest */ = {
 			isa = PBXGroup;
 			children = (
+				0ADDC4DF219C38E60025C825 /* AppBatchRequest.h */,
+				0ADDC4E0219C38E60025C825 /* AppBatchRequest.m */,
+				0ADDC4E2219C38FC0025C825 /* AppBatchRequestAgent.h */,
+				0ADDC4E3219C38FC0025C825 /* AppBatchRequestAgent.m */,
 				0A437810219949C8001B5464 /* AppRequest.h */,
 				0A437811219949C8001B5464 /* AppRequest.m */,
 				0A9DB809219989BA00C7E156 /* AppResult.h */,
@@ -549,10 +559,12 @@
 				0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */,
 				0A13CF8520C645AC0071F0D9 /* BaseTabBarController.m in Sources */,
 				0A3A5B4B2196B4AA009526F0 /* NSString+Size.m in Sources */,
+				0ADDC4E1219C38E60025C825 /* AppBatchRequest.m in Sources */,
 				0A3A5B5B2196BA28009526F0 /* DispatcherManager.m in Sources */,
 				0A3A5B582196B97B009526F0 /* AppJsonTool.m in Sources */,
 				0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */,
 				0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */,
+				0ADDC4E4219C38FC0025C825 /* AppBatchRequestAgent.m in Sources */,
 				0A3A5B462196B3C3009526F0 /* NSString+MD5.m in Sources */,
 				0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */,
 				0A3A5B642196BFE5009526F0 /* AppBaseVC.m in Sources */,
