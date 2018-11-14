@@ -62,7 +62,10 @@ static dispatch_semaphore_t sema;
 }
 
 - (void)cancelAllRequest {
-    
+    NSArray *allReqeust = [_taskRequestRecorder allValues];
+    for (AppBaseRequest *request in allReqeust) {
+        [request stop];
+    }
 }
 
 #pragma mark ------------ Private -----------
@@ -132,6 +135,32 @@ static dispatch_semaphore_t sema;
 - (void)request:(AppBaseRequest *)request url:(NSString *)urlStr parameter:(id)params {
     
     AppRequestMethod method = [request reqeustMethod];
+    
+    // request Serializer configure
+    // 1. create serializer
+    if (request.requestSerializerType == AppRequestSerializerHTTP) {
+        _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    } else if (request.requestSerializerType == AppRequestSerializerJSON) {
+        _manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    }
+    
+    // 2. set timeout
+    _manager.requestSerializer.timeoutInterval = request.requestTimeoutInterval;
+    
+    // 3. set server username and password
+    NSArray *userKeyPair = [request requestAuthorizationHeaderFieldArray];
+    [_manager.requestSerializer setAuthorizationHeaderFieldWithUsername:(NSString *)userKeyPair.firstObject
+                                                               password:(NSString *)userKeyPair.lastObject];
+    
+    // 4. set header
+    NSDictionary *headersDic = [request requestHeaderFieldValueDictionary];
+    
+    for (NSString *key in headersDic.allKeys) {
+        NSString *value = headersDic[key];
+        [_manager.requestSerializer setValue:value forHTTPHeaderField:key];
+    }
+ 
+    
     NSURLSessionDataTask *task = nil;
     if (method == AppRequestMethodGet) {
         task = [_manager GET:urlStr parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -153,7 +182,7 @@ static dispatch_semaphore_t sema;
             }];
         } else {
             task = [_manager POST:urlStr parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-                
+                // 构造数据
             } progress:^(NSProgress * _Nonnull uploadProgress) {
                 [self handleRequestProgress:uploadProgress request:request];
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -174,6 +203,7 @@ static dispatch_semaphore_t sema;
         return;
     }
     [self addOperation:request task:task];
+    
 }
 
 /**
@@ -186,15 +216,49 @@ static dispatch_semaphore_t sema;
 - (void)handleResponceWithTask:(NSURLSessionDataTask *)task responseObject:(id)responseObject error:(NSError *)error {
     
     NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-    // responseHeader
-//    request.responseHeaders = response.allHeaderFields;
-    // responseStatusCode
-    
+    AppBaseRequest *request = [self requestForTask:task];
+    if (request) {
+        request.responseHeaders = response.allHeaderFields;
+        request.reponseStatusCode = response.statusCode;
+        request.error = error;
+        
+        if ([self statusCodeValidator:response.statusCode]) {
+            // 先执行block回调
+            if (request.successCompletionBlock) {
+                // 自动数据解析
+                [request requestSuccessFilter];
+                // 成功回调
+                request.successCompletionBlock(request);
+            }
+            // 再执行代理回调
+            if (request.delegate) {
+                [request.delegate requestFinished:request];
+            }
+            
+        } else {
+            if (request.failureCompletionBlock) {
+                request.failureCompletionBlock(request);
+            }
+            
+            if (request.delegate) {
+                [request.delegate requestFailed:request];
+            }
+        }
+        [request clearCompletionBlock];
+        [self removeOperation:request];
+    }
+   
 }
 
 
 - (void)handleRequestProgress:(NSProgress *)progress request:(AppBaseRequest *)request {
     
+    if (request.progressBlock) {
+        request.progressBlock(progress);
+    }
+    if (request.delegate) {
+        [request.delegate requestProgress:progress request:request];
+    }
 }
 
 #pragma mark - Request Task Record
@@ -224,26 +288,33 @@ static dispatch_semaphore_t sema;
 - (void)removeOperation:(AppBaseRequest *)request {
     
     NSString *reqkey = [self hashKey:request];
-    @synchronized(self) {
-        NSString *taskKey = [self hashKey:[_requestTaskRecorder objectForKey:reqkey]];
-        [_requestTaskRecorder removeObjectForKey:reqkey];
-        [_taskRequestRecorder removeObjectForKey:taskKey];
-    }
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    NSString *taskKey = [self hashKey:[_requestTaskRecorder objectForKey:reqkey]];
+    [_requestTaskRecorder removeObjectForKey:reqkey];
+    [_taskRequestRecorder removeObjectForKey:taskKey];
+    dispatch_semaphore_signal(sema);
 }
 
 - (NSURLSessionDataTask *)taskForRequest:(AppBaseRequest *)request {
     
-    NSString *key = [self hashKey:request];
-    NSURLSessionDataTask *task = nil;
-    @synchronized(self) {
-        task = [_requestTaskRecorder objectForKey:key];
-    }
-    
+    NSString *reqkey = [self hashKey:request];
+    NSURLSessionDataTask *task = [_requestTaskRecorder objectForKey:reqkey];
     return task;
 }
 
 - (AppBaseRequest *)requestForTask:(NSURLSessionDataTask *)task {
-    return nil;
+    NSString *taskKey = [self hashKey:task];
+    AppBaseRequest *request = [_taskRequestRecorder objectForKey:taskKey];
+    return request;
+}
+
+/// check Status Code
+- (BOOL)statusCodeValidator:(NSInteger)code {
+    if (code >= 200 && code <= 299) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 

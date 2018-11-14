@@ -42,7 +42,7 @@
 
 // 请求成功进行数据解析
 - (void)requestSuccessFilter {
-    
+    [self convertJSON];
 }
 
 // 请求失败
@@ -60,7 +60,8 @@
 - (void)convertJSON {
     NSDictionary *resultDic = self.responseObject;
     if ([self jsonModeClass] && [[self jsonModeClass] isSubclassOfClass:[AppResult class]]) {
-        [[self jsonModeClass] parseTotalData:resultDic];
+        id obj = [[self jsonModeClass] parseTotalData:resultDic];
+        self.result = obj;
         if ([self ignoreCache] == NO) {
             [self cacheResult];
         }

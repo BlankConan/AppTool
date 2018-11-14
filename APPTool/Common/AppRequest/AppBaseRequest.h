@@ -97,7 +97,7 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 /// header authorization.
 @property (nonatomic, copy) NSArray *requestAuthorizationHeaderFieldArray;
 /// request header k-v.
-@property (nonatomic, strong) NSDictionary *requestHeaderFieldValueDictionary;
+@property (nonatomic, strong) NSDictionary<NSString *, NSString *> * requestHeaderFieldValueDictionary;
 
 @property (nonatomic, copy) AFConstructingBlock constructingBodyBlock;
 
@@ -135,7 +135,7 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 
  @return yes or no
  */
-- (BOOL)isExcuting;
+//- (BOOL)isExcuting;
 
 /**
  请求结束执行回调(自动进行请求)
@@ -203,8 +203,8 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 - (NSArray * _Nonnull)requestAuthorizationHeaderFieldArray;
 
 // request header K-V
-- (void)setRequestHeaderFieldValueDictionary:(NSDictionary * _Nonnull)requestHeaderFieldValueDictionary;
-- (NSDictionary * _Nonnull)requestHeaderFieldValueDictionary;
+- (void)setRequestHeaderFieldValueDictionary:(NSDictionary<NSString *, NSString*> *)requestHeaderFieldValueDictionary;
+-  (NSDictionary<NSString *,NSString *> *)requestHeaderFieldValueDictionary;
 
 #warning liugangyi 需要修改
 /// 当POST的内容带有文件等富文本时使用

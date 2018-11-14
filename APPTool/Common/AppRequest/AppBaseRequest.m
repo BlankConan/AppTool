@@ -104,7 +104,7 @@
     return _requestArguments;
 }
 
-- (NSDictionary *)requestHeaderFieldValueDictionary {
+- (NSDictionary<NSString *,NSString *> *)requestHeaderFieldValueDictionary {
     return _requestHeaderFieldValueDictionary;
 }
 
@@ -122,14 +122,6 @@
 
 #pragma mark Private
 
-/// check Status Code
-- (BOOL)statusCodeValidator {
-    NSInteger code= [self reponseStatusCode];
-    if (code >= 200 && code <= 299) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
+
 
 @end
