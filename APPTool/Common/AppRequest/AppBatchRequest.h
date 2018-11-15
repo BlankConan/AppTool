@@ -41,7 +41,7 @@
 /// success block.
 @property (nonatomic, copy) void (^successCompleteBlock)(AppBatchRequest *);
 /// failured block.
-@property (nonatomic, copy) void (^failuredCompleteBlock)(AppBatchRequest *);
+@property (nonatomic, copy) void (^failuredCompleteBlock)(AppBatchRequest *, AppBaseRequest *);
 /// task num.
 @property (nonatomic, assign) NSUInteger tag;
 
@@ -59,7 +59,8 @@
  @param success success block
  @param failured failured request will be returned, and current batchrequest
  */
-- (void)setCompleteBlockWithSuccess:(void (^)(AppBatchRequest *))success failured:(void (^)(AppBatchRequest *, AppBaseRequest *))failured;
+- (void)setCompleteBlockWithSuccess:(void (^)(AppBatchRequest *))success
+                           failured:(void (^)(AppBatchRequest *, AppBaseRequest *))failured;
 
 
 /**
@@ -68,8 +69,12 @@
  @param success success block
  @param failured failured request will be returned, and current batchrequest
  */
-- (void)startCompleteBlockWithSuccess:(void (^)(AppBatchRequest *))success failured:(void (^)(AppBatchRequest *, AppBaseRequest *))failured;
+- (void)startCompleteBlockWithSuccess:(void (^)(AppBatchRequest *))success
+                             failured:(void (^)(AppBatchRequest *, AppBaseRequest *))failured;
 
+- (void)addRequest:(AppBaseRequest *)request
+completeWithSuccess:(void (^)(AppBaseRequest *))success
+          failured:(void (^)(AppBaseRequest *))failured;
 
 /**
  Add request to request queue and start task automatic
@@ -81,6 +86,11 @@
  */
 - (void)stop;
 
+
+/**
+ 清除block
+ */
+- (void)clearCallBackBlock;
 
 @end
 
