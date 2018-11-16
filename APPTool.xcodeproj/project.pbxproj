@@ -32,6 +32,7 @@
 		0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */; };
 		0A73AFC521990BA9008423C3 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC421990BA9008423C3 /* UIImage+Resize.m */; };
 		0A73AFC921990DE9008423C3 /* UIImage+Pure.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC821990DE9008423C3 /* UIImage+Pure.m */; };
+		0A9D30ED219EB8E700D545DD /* BaiDuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D30EC219EB8E700D545DD /* BaiDuRequest.m */; };
 		0A9DB80B219989BA00C7E156 /* BKResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DB80A219989BA00C7E156 /* BKResult.m */; };
 		0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */; };
 		0AC33DA82149398600A3DFAE /* AppTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33DA72149398600A3DFAE /* AppTimer.m */; };
@@ -99,6 +100,8 @@
 		0A73AFC721990DE9008423C3 /* UIImage+Pure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Pure.h"; sourceTree = "<group>"; };
 		0A73AFC821990DE9008423C3 /* UIImage+Pure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Pure.m"; sourceTree = "<group>"; };
 		0A9D30E9219EAA4D00D545DD /* BKBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKBatchRequest.h; sourceTree = "<group>"; };
+		0A9D30EB219EB8E700D545DD /* BaiDuRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiDuRequest.h; sourceTree = "<group>"; };
+		0A9D30EC219EB8E700D545DD /* BaiDuRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaiDuRequest.m; sourceTree = "<group>"; };
 		0A9DB809219989BA00C7E156 /* BKResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKResult.h; sourceTree = "<group>"; };
 		0A9DB80A219989BA00C7E156 /* BKResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKResult.m; sourceTree = "<group>"; };
 		0ABAFB23213D8B3E00F8AF0C /* DispatchTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchTestVC.h; sourceTree = "<group>"; };
@@ -286,6 +289,7 @@
 		0A3A5B502196B845009526F0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0A9D30EA219EB60D00D545DD /* RequestExample */,
 				0A3A5B512196B85F009526F0 /* GCDReleatedTest */,
 			);
 			path = Classes;
@@ -412,6 +416,15 @@
 				0A73AFC821990DE9008423C3 /* UIImage+Pure.m */,
 			);
 			path = Pure;
+			sourceTree = "<group>";
+		};
+		0A9D30EA219EB60D00D545DD /* RequestExample */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D30EB219EB8E700D545DD /* BaiDuRequest.h */,
+				0A9D30EC219EB8E700D545DD /* BaiDuRequest.m */,
+			);
+			path = RequestExample;
 			sourceTree = "<group>";
 		};
 		0AC33DA52149397700A3DFAE /* CustomerTimer */ = {
@@ -562,6 +575,7 @@
 				0ADDC4E1219C38E60025C825 /* BKBatchRequest.m in Sources */,
 				0A3A5B5B2196BA28009526F0 /* DispatcherManager.m in Sources */,
 				0A3A5B582196B97B009526F0 /* AppJsonTool.m in Sources */,
+				0A9D30ED219EB8E700D545DD /* BaiDuRequest.m in Sources */,
 				0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */,
 				0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */,
 				0ADDC4E4219C38FC0025C825 /* BKBatchRequestAgent.m in Sources */,

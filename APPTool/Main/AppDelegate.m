@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "RootVC.h"
-#import "BKRequest.h"
+#import "BaiDuRequest.h"
+
 @interface AppDelegate ()
 
 @end
@@ -23,7 +24,12 @@
     self.window.rootViewController = [[RootVC alloc] init];
     [self.window makeKeyAndVisible];
 
-    BKRequest *request = [[BKRequest alloc]  init];
+    BaiDuRequest *request = [[BaiDuRequest alloc] init];
+    [request startCompletionBlockWithProgress:nil success:^(BKBaseRequest *request) {
+        NSLog(@"成功");
+    } failure:^(BKBaseRequest *request) {
+        NSLog(@"失败");
+    }];
 
     
     return YES;

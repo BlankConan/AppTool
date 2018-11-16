@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
+/**
+ 所有的请求结果类都必须继承此类
+ */
 @interface BKResult : NSObject
 
 

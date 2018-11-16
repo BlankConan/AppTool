@@ -46,7 +46,8 @@ static dispatch_semaphore_t sema;
     
     NSMutableDictionary *arguments = [baseArguments mutableCopy];
     [arguments setValuesForKeysWithDictionary:requestArguments];
-    
+    if (arguments.allKeys.count == 0) arguments = nil;
+
     BKRequestMethod method = [request reqeustMethod];
     if (method == BKRequestMethodGet && arguments) {
         NSData *data = [NSJSONSerialization dataWithJSONObject:arguments options:NSJSONWritingPrettyPrinted error:nil];
@@ -91,6 +92,7 @@ static dispatch_semaphore_t sema;
     //    policy.validatesDomainName = YES;
     //    _manager.securityPolicy = policy;
     _manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    
     
     _requestTaskRecorder = [NSMutableDictionary dictionaryWithCapacity:0];
     _taskRequestRecorder = [NSMutableDictionary dictionaryWithCapacity:0];
@@ -140,9 +142,12 @@ static dispatch_semaphore_t sema;
     // 1. create serializer
     if (request.requestSerializerType == BKRequestSerializerHTTP) {
         _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     } else if (request.requestSerializerType == BKRequestSerializerJSON) {
         _manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        _manager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
+    _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     
     // 2. set timeout
     _manager.requestSerializer.timeoutInterval = request.requestTimeoutInterval;
