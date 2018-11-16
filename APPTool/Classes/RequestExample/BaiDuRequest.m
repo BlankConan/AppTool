@@ -10,7 +10,9 @@
 
 @implementation BaiDuRequest
 
-
+- (NSString *)requestUrl {
+    return @"http://www.coolmath.cn/";
+}
 
 
 @end

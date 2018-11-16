@@ -33,6 +33,8 @@
 		0A73AFC521990BA9008423C3 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC421990BA9008423C3 /* UIImage+Resize.m */; };
 		0A73AFC921990DE9008423C3 /* UIImage+Pure.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC821990DE9008423C3 /* UIImage+Pure.m */; };
 		0A9D30ED219EB8E700D545DD /* BaiDuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D30EC219EB8E700D545DD /* BaiDuRequest.m */; };
+		0A9D30F0219EC64600D545DD /* BKChainRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D30EF219EC64600D545DD /* BKChainRequest.m */; };
+		0A9D30F3219EC65800D545DD /* BKChainRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D30F2219EC65800D545DD /* BKChainRequestAgent.m */; };
 		0A9DB80B219989BA00C7E156 /* BKResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DB80A219989BA00C7E156 /* BKResult.m */; };
 		0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */; };
 		0AC33DA82149398600A3DFAE /* AppTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33DA72149398600A3DFAE /* AppTimer.m */; };
@@ -102,6 +104,10 @@
 		0A9D30E9219EAA4D00D545DD /* BKBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKBatchRequest.h; sourceTree = "<group>"; };
 		0A9D30EB219EB8E700D545DD /* BaiDuRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiDuRequest.h; sourceTree = "<group>"; };
 		0A9D30EC219EB8E700D545DD /* BaiDuRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaiDuRequest.m; sourceTree = "<group>"; };
+		0A9D30EE219EC64600D545DD /* BKChainRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKChainRequest.h; sourceTree = "<group>"; };
+		0A9D30EF219EC64600D545DD /* BKChainRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKChainRequest.m; sourceTree = "<group>"; };
+		0A9D30F1219EC65800D545DD /* BKChainRequestAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKChainRequestAgent.h; sourceTree = "<group>"; };
+		0A9D30F2219EC65800D545DD /* BKChainRequestAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKChainRequestAgent.m; sourceTree = "<group>"; };
 		0A9DB809219989BA00C7E156 /* BKResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKResult.h; sourceTree = "<group>"; };
 		0A9DB80A219989BA00C7E156 /* BKResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKResult.m; sourceTree = "<group>"; };
 		0ABAFB23213D8B3E00F8AF0C /* DispatchTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchTestVC.h; sourceTree = "<group>"; };
@@ -353,10 +359,6 @@
 		0A43780C2199497E001B5464 /* AppRequest */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D30E9219EAA4D00D545DD /* BKBatchRequest.h */,
-				0ADDC4E0219C38E60025C825 /* BKBatchRequest.m */,
-				0ADDC4E2219C38FC0025C825 /* BKBatchRequestAgent.h */,
-				0ADDC4E3219C38FC0025C825 /* BKBatchRequestAgent.m */,
 				0A437810219949C8001B5464 /* BKRequest.h */,
 				0A437811219949C8001B5464 /* BKRequest.m */,
 				0A9DB809219989BA00C7E156 /* BKResult.h */,
@@ -365,6 +367,14 @@
 				0A43780E219949AC001B5464 /* BKBaseRequest.m */,
 				0A43781321994E0B001B5464 /* BKNetworkAgent.h */,
 				0A43781421994E0B001B5464 /* BKNetworkAgent.m */,
+				0A9D30EE219EC64600D545DD /* BKChainRequest.h */,
+				0A9D30EF219EC64600D545DD /* BKChainRequest.m */,
+				0A9D30F1219EC65800D545DD /* BKChainRequestAgent.h */,
+				0A9D30F2219EC65800D545DD /* BKChainRequestAgent.m */,
+				0A9D30E9219EAA4D00D545DD /* BKBatchRequest.h */,
+				0ADDC4E0219C38E60025C825 /* BKBatchRequest.m */,
+				0ADDC4E2219C38FC0025C825 /* BKBatchRequestAgent.h */,
+				0ADDC4E3219C38FC0025C825 /* BKBatchRequestAgent.m */,
 			);
 			path = AppRequest;
 			sourceTree = "<group>";
@@ -588,10 +598,12 @@
 				0A43780F219949AC001B5464 /* BKBaseRequest.m in Sources */,
 				0A3A5B4F2196B6B8009526F0 /* NSString+Date.m in Sources */,
 				0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */,
+				0A9D30F3219EC65800D545DD /* BKChainRequestAgent.m in Sources */,
 				0A13CF7E20C6453D0071F0D9 /* RootVC.m in Sources */,
 				0A3A5B552196B966009526F0 /* Dispatcher.m in Sources */,
 				0A13CF7520C644E90071F0D9 /* main.m in Sources */,
 				0A13CF6720C644E70071F0D9 /* AppDelegate.m in Sources */,
+				0A9D30F0219EC64600D545DD /* BKChainRequest.m in Sources */,
 				0A437812219949C8001B5464 /* BKRequest.m in Sources */,
 				0A73AFC521990BA9008423C3 /* UIImage+Resize.m in Sources */,
 			);

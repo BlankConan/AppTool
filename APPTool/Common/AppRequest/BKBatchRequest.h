@@ -62,8 +62,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param success success block
  @param failured failured request will be returned, and current batchrequest
  */
-- (void)setCompleteBlockWithSuccess:(void (^)(BKBatchRequest *))success
-                           failured:(void (^)(BKBatchRequest *, BKRequest *))failured;
+- (void)setCompleteBlockWithSuccess:(void (^)(BKBatchRequest *batchRequest))success
+                           failured:(void (^)(BKBatchRequest *batchRequest, BKRequest *request))failured;
 
 
 /**
@@ -72,8 +72,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param success success block
  @param failured failured request will be returned, and current batchrequest
  */
-- (void)startCompleteBlockWithSuccess:(void (^)(BKBatchRequest *))success
-                             failured:(void (^)(BKBatchRequest *, BKRequest *))failured;
+- (void)startCompleteBlockWithSuccess:(void (^)(BKBatchRequest *batchRequest))success
+                             failured:(void (^)(BKBatchRequest *batchRequest, BKRequest *request))failured;
 
 /**
  Add request into batch queue,

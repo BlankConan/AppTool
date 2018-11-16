@@ -145,8 +145,8 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
  @param failure 失败block
  */
 - (void)startCompletionBlockWithProgress:(void (^) (NSProgress *))progress
-                                 success:(void (^) (BKBaseRequest *))success
-                                 failure:(void (^) (BKBaseRequest *))failure;
+                                 success:(void (^) (BKBaseRequest *baseRequest))success
+                                 failure:(void (^) (BKBaseRequest *baseRequest))failure;
 
 /**
  设置回调block
@@ -156,8 +156,8 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
  @param failure 失败回调block
  */
 - (void)setCompletionBlockWithProgress:(void (^) (NSProgress *))progress
-                                 success:(void (^) (BKBaseRequest *))success
-                                 failure:(void (^) (BKBaseRequest *))failure;
+                                 success:(void (^) (BKBaseRequest *baseRequest))success
+                                 failure:(void (^) (BKBaseRequest *baseRequest))failure;
 
 /**
  清空回调block 打破循环引用
