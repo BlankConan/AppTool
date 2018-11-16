@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RootVC.h"
 #import "BaiDuRequest.h"
+#import "BKChainRequestAgent.h"
 
 @interface AppDelegate ()
 
@@ -23,13 +24,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[RootVC alloc] init];
     [self.window makeKeyAndVisible];
-
-    BaiDuRequest *request = [[BaiDuRequest alloc] init];
-    [request startCompletionBlockWithProgress:nil success:^(BKBaseRequest *request) {
-        NSLog(@"成功");
-    } failure:^(BKBaseRequest *request) {
-        NSLog(@"失败");
-    }];
+    
+//    BaiDuRequest *request = [[BaiDuRequest alloc] init];
+//    [request startCompletionBlockWithProgress:nil success:^(BKBaseRequest *request) {
+//        NSLog(@"成功");
+//    } failure:^(BKBaseRequest *request) {
+//        NSLog(@"失败");
+//    }];
 
     
     return YES;

@@ -22,14 +22,14 @@ static dispatch_semaphore_t sema;
 #pragma mark Public
 
 + (instancetype)shareInstance {
-    static id instance = nil;
+    static id agent = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[self alloc] init];
+        agent = [[self alloc] init];
         sema = dispatch_semaphore_create(1);
-        [instance initNetworkManager];
+        [agent initNetworkManager];
     });
-    return instance;
+    return agent;
 }
 
 /**
@@ -246,7 +246,7 @@ static dispatch_semaphore_t sema;
             }
             
             if (request.delegate) {
-                [request.delegate requestFailed:request];
+                [request.delegate requestFailured:request];
             }
         }
         [request clearCompletionBlock];

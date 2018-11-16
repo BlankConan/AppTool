@@ -60,7 +60,7 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 
  @param request 当前失败的请求
  */
-- (void)requestFailed:(BKBaseRequest *)request;
+- (void)requestFailured:(BKBaseRequest *)request;
 
 @end
 
