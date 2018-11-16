@@ -1,14 +1,14 @@
 //
-//  AppBaseRequest.m
+//  BKBaseRequest.m
 //  APPTool
 //
 //  Created by liugangyi on 2018/11/12.
 //  Copyright © 2018年 liu gangyi. All rights reserved.
 //
 
-#import "AppBaseRequest.h"
-#import "APPNetworkAgent.h"
-@implementation AppBaseRequest
+#import "BKBaseRequest.h"
+#import "BKNetworkAgent.h"
+@implementation BKBaseRequest
 
 #pragma mark Initialize
 
@@ -19,21 +19,21 @@
         _cdnUrl = @"";
         _baseUrl = @"";
         _requestUrl = @"";
-        _reqeustMethod = AppRequestMethodGet;
+        _reqeustMethod = BKRequestMethodGet;
         _requestTimeoutInterval = 60;
-        _requestSerializerType = AppRequestSerializerHTTP;
+        _requestSerializerType = BKRequestSerializerHTTP;
     }
     return self;
 }
 
 
 - (void)start {
-    [[APPNetworkAgent shareInstance] addRequest:self];
+    [[BKNetworkAgent shareInstance] addRequest:self];
 }
 
 - (void)stop {
     self.delegate = nil;
-    [[APPNetworkAgent shareInstance] cancelRequest:self];
+    [[BKNetworkAgent shareInstance] cancelRequest:self];
 }
 
 - (BOOL)isExcuting {
@@ -42,15 +42,15 @@
 }
 
 - (void)startCompletionBlockWithProgress:(void (^)(NSProgress * _Nonnull))progress
-                                 success:(void (^)(AppBaseRequest * _Nonnull))success
-                                 failure:(void (^)(AppBaseRequest * _Nonnull))failure {
+                                 success:(void (^)(BKBaseRequest * _Nonnull))success
+                                 failure:(void (^)(BKBaseRequest * _Nonnull))failure {
     [self setCompletionBlockWithProgress:progress success:success failure:failure];
     [self start];
 }
 
 - (void)setCompletionBlockWithProgress:(void (^)(NSProgress * _Nonnull))progress
-                               success:(void (^)(AppBaseRequest * _Nonnull))success
-                               failure:(void (^)(AppBaseRequest * _Nonnull))failure {
+                               success:(void (^)(BKBaseRequest * _Nonnull))success
+                               failure:(void (^)(BKBaseRequest * _Nonnull))failure {
     self.progressBlock = progress;
     self.successCompletionBlock = success;
     self.failureCompletionBlock = failure;
@@ -92,7 +92,7 @@
     return _requestTimeoutInterval;
 }
 
-- (AppRequestSerializerType)requestSerializerType {
+- (BKRequestSerializerType)requestSerializerType {
     return _requestSerializerType;
 }
 

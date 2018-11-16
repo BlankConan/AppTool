@@ -1,5 +1,5 @@
 //
-//  AppResult.h
+//  BKResult.h
 //  APPTool
 //
 //  Created by liugangyi on 2018/11/12.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AppResult : NSObject
+@interface BKResult : NSObject
 
 
 /// responseMessage.

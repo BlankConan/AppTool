@@ -6,17 +6,17 @@
 //  Copyright © 2018年 liu gangyi. All rights reserved.
 //
 
-#import "AppResult.h"
+#import "BKResult.h"
 
 
-@implementation AppResult
+@implementation BKResult
 
 + (instancetype)parseTotalData:(NSDictionary *)jsonDic {
     
     // 自动解析所有的数据，不过只让他解析 response 有关的
-    AppResult *parentResult = [AppResult parseJsonData:jsonDic];
+    BKResult *parentResult = [BKResult parseJsonData:jsonDic];
     // 自动解析 真实数据
-    AppResult *dataResult = [[self class] parseJsonData:jsonDic[@"responseData"]];
+    BKResult *dataResult = [[self class] parseJsonData:jsonDic[@"responseData"]];
     dataResult.responsePk = parentResult.responsePk;
     dataResult.responseCode = parentResult.responseCode;
     dataResult.responseMessage = parentResult.responseMessage;

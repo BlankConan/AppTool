@@ -9,26 +9,28 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@class AppBatchRequest;
+@class BKBatchRequest;
 
-@interface AppBatchRequestAgent : NSObject
+@interface BKBatchRequestAgent : NSObject
+
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 + (instancetype)shareInstance;
-
 
 /**
  Add batch request to queue
 
  @param request request
  */
-- (void)addBatchRequest:(AppBatchRequest *)request;
+- (void)addBatchRequest:(BKBatchRequest *)request;
 
 /**
  Remove batch reqeust from queue
 
  @param request batch reqeust
  */
-- (void)removeBatchRequest:(AppBatchRequest *)request;
+- (void)removeBatchRequest:(BKBatchRequest *)request;
 
 @end
 

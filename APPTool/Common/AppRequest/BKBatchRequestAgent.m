@@ -6,12 +6,12 @@
 //  Copyright © 2018年 liu gangyi. All rights reserved.
 //
 
-#import "AppBatchRequestAgent.h"
+#import "BKBatchRequestAgent.h"
 
 static dispatch_semaphore_t lock;
 
-@implementation AppBatchRequestAgent {
-    NSMutableArray <AppBatchRequest *> * _requestArray;
+@implementation BKBatchRequestAgent {
+    NSMutableArray <BKBatchRequest *> * _requestArray;
 }
 
 - (instancetype)init {
@@ -28,18 +28,18 @@ static dispatch_semaphore_t lock;
     static id agent = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        agent = [[AppBatchRequestAgent alloc] init];
+        agent = [[self alloc] init];
     });
     return agent;
 }
 
-- (void)addBatchRequest:(AppBatchRequest *)request {
+- (void)addBatchRequest:(BKBatchRequest *)request {
     dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
     [_requestArray addObject:request];
     dispatch_semaphore_signal(lock);
 }
 
-- (void)removeBatchRequest:(AppBatchRequest *)request {
+- (void)removeBatchRequest:(BKBatchRequest *)request {
     dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
     [_requestArray removeObject:request];
     dispatch_semaphore_signal(lock);

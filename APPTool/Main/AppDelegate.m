@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootVC.h"
-#import "AppRequest.h"
+#import "BKRequest.h"
 @interface AppDelegate ()
 
 @end
@@ -23,7 +23,7 @@
     self.window.rootViewController = [[RootVC alloc] init];
     [self.window makeKeyAndVisible];
 
-    AppRequest *request = [[AppRequest alloc]  init];
+    BKRequest *request = [[BKRequest alloc]  init];
 
     
     return YES;

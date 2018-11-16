@@ -1,5 +1,5 @@
 //
-//  APPNetworkAgent.h
+//  BKNetworkAgent.h
 //  APPTool
 //
 //  Created by liugangyi on 2018/11/12.
@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-@class AppBaseRequest;
+@class BKBaseRequest;
 NS_ASSUME_NONNULL_BEGIN
 
 /**
  请求管理类
  */
-@interface APPNetworkAgent : NSObject
+@interface BKNetworkAgent : NSObject
 
 /**
  单例创建
@@ -27,14 +27,14 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param request 请求子类
  */
-- (void)addRequest:(AppBaseRequest *)request;
+- (void)addRequest:(BKBaseRequest *)request;
 
 /**
  取消请求
 
  @param request 请求子类
  */
-- (void)cancelRequest:(AppBaseRequest *)request;
+- (void)cancelRequest:(BKBaseRequest *)request;
 
 /**
  取消所有请求

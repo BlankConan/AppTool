@@ -1,5 +1,5 @@
 //
-//  AppRequest.h
+//  BKRequest.h
 //  APPTool
 //
 //  Created by liugangyi on 2018/11/12.
@@ -7,22 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppBaseRequest.h"
-#import "AppResult.h"
+#import "BKBaseRequest.h"
+#import "BKResult.h"
 
 /**
  App 请求类
- 每个接口继承AppRequest
+ 每个接口继承 BKRequest
  每个接口重载 requesturl
  每个接口重载 arguments
  @optional
  每个接口重载 baseReqeustUrl
  
  */
-@interface AppRequest : AppBaseRequest
+@interface BKRequest : BKBaseRequest
 
 /// data.
-@property (nonatomic, strong) AppResult *result;
+@property (nonatomic, strong) BKResult *result;
 
 /// yes - ignore cache.
 @property (nonatomic, assign) BOOL ignoreCache;

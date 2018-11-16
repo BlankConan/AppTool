@@ -1,16 +1,16 @@
 //
-//  APPNetworkAgent.m
+//  BKNetworkAgent.m
 //  APPTool
 //
 //  Created by liugangyi on 2018/11/12.
 //  Copyright © 2018年 liu gangyi. All rights reserved.
 //
 
-#import "APPNetworkAgent.h"
-#import "AppRequest.h"
+#import "BKNetworkAgent.h"
+#import "BKRequest.h"
 static dispatch_semaphore_t sema;
 
-@implementation APPNetworkAgent {
+@implementation BKNetworkAgent {
     AFHTTPSessionManager *_manager;
     // 通过request hash 找 task
     NSMutableDictionary *_requestTaskRecorder;
@@ -37,7 +37,7 @@ static dispatch_semaphore_t sema;
 
  @param request request
  */
-- (void)addRequest:(AppBaseRequest *)request {
+- (void)addRequest:(BKBaseRequest *)request {
     
     NSString *url = [self buildRequestUrlStr:request];
     
@@ -47,15 +47,15 @@ static dispatch_semaphore_t sema;
     NSMutableDictionary *arguments = [baseArguments mutableCopy];
     [arguments setValuesForKeysWithDictionary:requestArguments];
     
-    AppRequestMethod method = [request reqeustMethod];
-    if (method == AppRequestMethodGet && arguments) {
+    BKRequestMethod method = [request reqeustMethod];
+    if (method == BKRequestMethodGet && arguments) {
         NSData *data = [NSJSONSerialization dataWithJSONObject:arguments options:NSJSONWritingPrettyPrinted error:nil];
         arguments = [NSMutableDictionary dictionaryWithObject:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] forKey:@"queryJson"];
     }
     [self request:request url:url parameter:arguments];
 }
 
-- (void)cancelRequest:(AppBaseRequest *)request {
+- (void)cancelRequest:(BKBaseRequest *)request {
     [[self taskForRequest:request] cancel];
     [request clearCompletionBlock];
     [self removeOperation:request];
@@ -63,7 +63,7 @@ static dispatch_semaphore_t sema;
 
 - (void)cancelAllRequest {
     NSArray *allReqeust = [_taskRequestRecorder allValues];
-    for (AppBaseRequest *request in allReqeust) {
+    for (BKBaseRequest *request in allReqeust) {
         [request stop];
     }
 }
@@ -83,8 +83,8 @@ static dispatch_semaphore_t sema;
 - (void)initNetworkManager {
     
     // 请求超时设置
-    // 1. 可以通过configuration，设置所有的超时时间
-    // 2. 通过RequestSerializer，设置超时时间s
+    // 1. 可以通过 configuration，设置所有的超时时间
+    // 2. 通过 RequestSerializer，设置超时时间s
     _manager = [AFHTTPSessionManager manager];
     _manager.operationQueue.maxConcurrentOperationCount = 10;
     //    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey];
@@ -104,7 +104,7 @@ static dispatch_semaphore_t sema;
  @param request 请求子类
  @return 生成url
  */
-- (NSString *)buildRequestUrlStr:(AppBaseRequest *)request {
+- (NSString *)buildRequestUrlStr:(BKBaseRequest *)request {
     
     NSString *detailUrl = [request requestUrl];
     if ([detailUrl hasPrefix:@"https://"] ||
@@ -132,15 +132,15 @@ static dispatch_semaphore_t sema;
  @param urlStr urlStr
  @param params 参数
  */
-- (void)request:(AppBaseRequest *)request url:(NSString *)urlStr parameter:(id)params {
+- (void)request:(BKBaseRequest *)request url:(NSString *)urlStr parameter:(id)params {
     
-    AppRequestMethod method = [request reqeustMethod];
+    BKRequestMethod method = [request reqeustMethod];
     
     // request Serializer configure
     // 1. create serializer
-    if (request.requestSerializerType == AppRequestSerializerHTTP) {
+    if (request.requestSerializerType == BKRequestSerializerHTTP) {
         _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    } else if (request.requestSerializerType == AppRequestSerializerJSON) {
+    } else if (request.requestSerializerType == BKRequestSerializerJSON) {
         _manager.requestSerializer = [AFJSONRequestSerializer serializer];
     }
     
@@ -162,7 +162,7 @@ static dispatch_semaphore_t sema;
  
     
     NSURLSessionDataTask *task = nil;
-    if (method == AppRequestMethodGet) {
+    if (method == BKRequestMethodGet) {
         task = [_manager GET:urlStr parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
             [self handleRequestProgress:downloadProgress request:request];
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -170,7 +170,7 @@ static dispatch_semaphore_t sema;
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [self handleResponceWithTask:task responseObject:nil error:error];
         }];
-    } else if (method == AppRequestMethodPost) {
+    } else if (method == BKRequestMethodPost) {
         
         if (request.constructingBodyBlock == nil) {
             task = [_manager POST:urlStr parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
@@ -192,7 +192,7 @@ static dispatch_semaphore_t sema;
             }];
         }
         
-    } else if (method == AppRequestMethodPut) {
+    } else if (method == BKRequestMethodPut) {
         task = [_manager PUT:urlStr parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponceWithTask:task responseObject:responseObject error:nil];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -216,7 +216,7 @@ static dispatch_semaphore_t sema;
 - (void)handleResponceWithTask:(NSURLSessionDataTask *)task responseObject:(id)responseObject error:(NSError *)error {
     
     NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-    AppBaseRequest *request = [self requestForTask:task];
+    BKBaseRequest *request = [self requestForTask:task];
     if (request) {
         request.responseHeaders = response.allHeaderFields;
         request.reponseStatusCode = response.statusCode;
@@ -251,7 +251,7 @@ static dispatch_semaphore_t sema;
 }
 
 
-- (void)handleRequestProgress:(NSProgress *)progress request:(AppBaseRequest *)request {
+- (void)handleRequestProgress:(NSProgress *)progress request:(BKBaseRequest *)request {
     
     if (request.progressBlock) {
         request.progressBlock(progress);
@@ -275,7 +275,7 @@ static dispatch_semaphore_t sema;
     return key;
 }
 
-- (void)addOperation:(AppBaseRequest *)request task:(NSURLSessionDataTask *)task {
+- (void)addOperation:(BKBaseRequest *)request task:(NSURLSessionDataTask *)task {
     
     NSString *reqkey = [self hashKey:request];
     NSString *taskKey = [self hashKey:task];
@@ -285,7 +285,7 @@ static dispatch_semaphore_t sema;
     dispatch_semaphore_signal(sema);
 }
 
-- (void)removeOperation:(AppBaseRequest *)request {
+- (void)removeOperation:(BKBaseRequest *)request {
     
     NSString *reqkey = [self hashKey:request];
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
@@ -295,16 +295,16 @@ static dispatch_semaphore_t sema;
     dispatch_semaphore_signal(sema);
 }
 
-- (NSURLSessionDataTask *)taskForRequest:(AppBaseRequest *)request {
+- (NSURLSessionDataTask *)taskForRequest:(BKBaseRequest *)request {
     
     NSString *reqkey = [self hashKey:request];
     NSURLSessionDataTask *task = [_requestTaskRecorder objectForKey:reqkey];
     return task;
 }
 
-- (AppBaseRequest *)requestForTask:(NSURLSessionDataTask *)task {
+- (BKBaseRequest *)requestForTask:(NSURLSessionDataTask *)task {
     NSString *taskKey = [self hashKey:task];
-    AppBaseRequest *request = [_taskRequestRecorder objectForKey:taskKey];
+    BKBaseRequest *request = [_taskRequestRecorder objectForKey:taskKey];
     return request;
 }
 

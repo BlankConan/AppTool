@@ -1,5 +1,5 @@
 //
-//  AppBaseRequest.h
+//  BKBaseRequest.h
 //  APPTool
 //
 //  Created by liugangyi on 2018/11/12.
@@ -11,23 +11,23 @@
 /**
  请求方法
  */
-typedef NS_ENUM(NSInteger, AppRequestMethod) {
+typedef NS_ENUM(NSInteger, BKRequestMethod) {
     // get
-    AppRequestMethodGet = 1,
+    BKRequestMethodGet = 1,
     // post
-    AppRequestMethodPost,
+    BKRequestMethodPost,
     // put
-    AppRequestMethodPut,
+    BKRequestMethodPut,
 };
 
 /**
  请求序列化
  */
-typedef NS_ENUM(NSInteger, AppRequestSerializerType) {
+typedef NS_ENUM(NSInteger, BKRequestSerializerType) {
     // http request
-    AppRequestSerializerHTTP = 1,
+    BKRequestSerializerHTTP = 1,
     // JSON request
-    AppRequestSerializerJSON,
+    BKRequestSerializerJSON,
 };
 
 // 构造POST block
@@ -36,8 +36,8 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 /**
  请求x回调协议
  */
-@class AppBaseRequest;
-@protocol AppRequestDelegate <NSObject>
+@class BKBaseRequest;
+@protocol BKRequestDelegate <NSObject>
 
 @optional
 /**
@@ -46,27 +46,27 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
  @param progress 进度
  @param request 请求
  */
-- (void)requestProgress:(NSProgress *)progress request:(AppBaseRequest *)request;
+- (void)requestProgress:(NSProgress *)progress request:(BKBaseRequest *)request;
 
 /**
  请求结束
 
  @param request 当前结束的请求
  */
-- (void)requestFinished:(AppBaseRequest *)request;
+- (void)requestFinished:(BKBaseRequest *)request;
 
 /**
  请求失败回调
 
  @param request 当前失败的请求
  */
-- (void)requestFailed:(AppBaseRequest *)request;
+- (void)requestFailed:(BKBaseRequest *)request;
 
 @end
 
 
 
-@interface AppBaseRequest : NSObject
+@interface BKBaseRequest : NSObject
 
 // tag
 @property (nonatomic, assign) NSInteger tag;
@@ -90,9 +90,9 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 /// request base arguments.
 @property (nonatomic, strong) NSDictionary *requestBaseArguments;
 /// request method.
-@property (nonatomic, assign) AppRequestMethod reqeustMethod;
+@property (nonatomic, assign) BKRequestMethod reqeustMethod;
 /// request Serializer type.
-@property (nonatomic, assign) AppRequestSerializerType requestSerializerType;
+@property (nonatomic, assign) BKRequestSerializerType requestSerializerType;
 
 /// header authorization.
 @property (nonatomic, copy) NSArray *requestAuthorizationHeaderFieldArray;
@@ -111,11 +111,11 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 
 #pragma mark - Request call back
 /// delegate.
-@property (nonatomic, weak) id<AppRequestDelegate> delegate;
+@property (nonatomic, weak) id<BKRequestDelegate> delegate;
 /// success block.
-@property (nonatomic, copy) void (^successCompletionBlock)(AppBaseRequest *);
+@property (nonatomic, copy) void (^successCompletionBlock)(BKBaseRequest *);
 // failure block.
-@property (nonatomic, copy) void (^failureCompletionBlock)(AppBaseRequest *);
+@property (nonatomic, copy) void (^failureCompletionBlock)(BKBaseRequest *);
 /// progress block.
 @property (nonatomic, copy) void (^progressBlock)(NSProgress *);
 
@@ -145,8 +145,8 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
  @param failure 失败block
  */
 - (void)startCompletionBlockWithProgress:(void (^) (NSProgress *))progress
-                                 success:(void (^) (AppBaseRequest *))success
-                                 failure:(void (^) (AppBaseRequest *))failure;
+                                 success:(void (^) (BKBaseRequest *))success
+                                 failure:(void (^) (BKBaseRequest *))failure;
 
 /**
  设置回调block
@@ -156,8 +156,8 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
  @param failure 失败回调block
  */
 - (void)setCompletionBlockWithProgress:(void (^) (NSProgress *))progress
-                                 success:(void (^) (AppBaseRequest *))success
-                                 failure:(void (^) (AppBaseRequest *))failure;
+                                 success:(void (^) (BKBaseRequest *))success
+                                 failure:(void (^) (BKBaseRequest *))failure;
 
 /**
  清空回调block 打破循环引用

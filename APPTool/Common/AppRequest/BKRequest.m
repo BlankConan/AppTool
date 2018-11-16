@@ -1,14 +1,14 @@
 //
-//  AppRequest.m
+//  BKRequest.m
 //  APPTool
 //
 //  Created by liugangyi on 2018/11/12.
 //  Copyright © 2018年 liu gangyi. All rights reserved.
 //
 
-#import "AppRequest.h"
+#import "BKRequest.h"
 
-@implementation AppRequest
+@implementation BKRequest
 
 - (instancetype)init
 {
@@ -50,7 +50,7 @@
 
 // 将数据交给result，必须都是AppResult的子类
 - (Class)jsonModeClass {
-    return [AppResult class];
+    return [BKResult class];
 }
 
 - (void)cacheResult {}
@@ -59,7 +59,7 @@
 
 - (void)convertJSON {
     NSDictionary *resultDic = self.responseObject;
-    if ([self jsonModeClass] && [[self jsonModeClass] isSubclassOfClass:[AppResult class]]) {
+    if ([self jsonModeClass] && [[self jsonModeClass] isSubclassOfClass:[BKResult class]]) {
         id obj = [[self jsonModeClass] parseTotalData:resultDic];
         self.result = obj;
         if ([self ignoreCache] == NO) {
