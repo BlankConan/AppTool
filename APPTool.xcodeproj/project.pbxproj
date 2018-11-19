@@ -15,6 +15,8 @@
 		0A13CF8220C645780071F0D9 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13CF8120C645780071F0D9 /* BaseNavigationController.m */; };
 		0A13CF8520C645AC0071F0D9 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13CF8420C645AC0071F0D9 /* BaseTabBarController.m */; };
 		0A13CF8C20C6FB5D0071F0D9 /* DatabaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13CF8B20C6FB5D0071F0D9 /* DatabaseTool.m */; };
+		0A36F13F21A24E4000BBA9F1 /* BKBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A36F13E21A24E4000BBA9F1 /* BKBanner.m */; };
+		0A36F14221A24E5500BBA9F1 /* BKBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A36F14121A24E5500BBA9F1 /* BKBannerModel.m */; };
 		0A3A5B3F2196AFCD009526F0 /* UIView+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B3E2196AFCD009526F0 /* UIView+Utility.m */; };
 		0A3A5B462196B3C3009526F0 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B452196B3C3009526F0 /* NSString+MD5.m */; };
 		0A3A5B4B2196B4AA009526F0 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B4A2196B4AA009526F0 /* NSString+Size.m */; };
@@ -37,7 +39,7 @@
 		0A9D30F3219EC65800D545DD /* BKChainRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D30F2219EC65800D545DD /* BKChainRequestAgent.m */; };
 		0A9DB80B219989BA00C7E156 /* BKResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DB80A219989BA00C7E156 /* BKResult.m */; };
 		0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */; };
-		0AC33DA82149398600A3DFAE /* AppTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33DA72149398600A3DFAE /* AppTimer.m */; };
+		0AC33DA82149398600A3DFAE /* BKTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33DA72149398600A3DFAE /* BKTimer.m */; };
 		0ADDC4E1219C38E60025C825 /* BKBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADDC4E0219C38E60025C825 /* BKBatchRequest.m */; };
 		0ADDC4E4219C38FC0025C825 /* BKBatchRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADDC4E3219C38FC0025C825 /* BKBatchRequestAgent.m */; };
 		0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8B2212B2F9E00F46BD5 /* UIView+UIResponder.m */; };
@@ -63,6 +65,10 @@
 		0A13CF9220CABC700071F0D9 /* AppResource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppResource.h; sourceTree = "<group>"; };
 		0A13CF9320CABEA90071F0D9 /* AppDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDebug.h; sourceTree = "<group>"; };
 		0A13CF9520CABF210071F0D9 /* AppTool.pch */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.c.h; path = AppTool.pch; sourceTree = "<group>"; };
+		0A36F13D21A24E4000BBA9F1 /* BKBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKBanner.h; sourceTree = "<group>"; };
+		0A36F13E21A24E4000BBA9F1 /* BKBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKBanner.m; sourceTree = "<group>"; };
+		0A36F14021A24E5500BBA9F1 /* BKBannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKBannerModel.h; sourceTree = "<group>"; };
+		0A36F14121A24E5500BBA9F1 /* BKBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKBannerModel.m; sourceTree = "<group>"; };
 		0A3A5B3D2196AFCD009526F0 /* UIView+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Utility.h"; sourceTree = "<group>"; };
 		0A3A5B3E2196AFCD009526F0 /* UIView+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utility.m"; sourceTree = "<group>"; };
 		0A3A5B442196B3C3009526F0 /* NSString+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
@@ -112,8 +118,8 @@
 		0A9DB80A219989BA00C7E156 /* BKResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKResult.m; sourceTree = "<group>"; };
 		0ABAFB23213D8B3E00F8AF0C /* DispatchTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchTestVC.h; sourceTree = "<group>"; };
 		0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DispatchTestVC.m; sourceTree = "<group>"; };
-		0AC33DA62149398600A3DFAE /* AppTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTimer.h; sourceTree = "<group>"; };
-		0AC33DA72149398600A3DFAE /* AppTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTimer.m; sourceTree = "<group>"; };
+		0AC33DA62149398600A3DFAE /* BKTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKTimer.h; sourceTree = "<group>"; };
+		0AC33DA72149398600A3DFAE /* BKTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKTimer.m; sourceTree = "<group>"; };
 		0ADDC4E0219C38E60025C825 /* BKBatchRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKBatchRequest.m; sourceTree = "<group>"; };
 		0ADDC4E2219C38FC0025C825 /* BKBatchRequestAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKBatchRequestAgent.h; sourceTree = "<group>"; };
 		0ADDC4E3219C38FC0025C825 /* BKBatchRequestAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKBatchRequestAgent.m; sourceTree = "<group>"; };
@@ -343,6 +349,10 @@
 		0A3A5BEE2196CBD1009526F0 /* AppBannerView */ = {
 			isa = PBXGroup;
 			children = (
+				0A36F13D21A24E4000BBA9F1 /* BKBanner.h */,
+				0A36F13E21A24E4000BBA9F1 /* BKBanner.m */,
+				0A36F14021A24E5500BBA9F1 /* BKBannerModel.h */,
+				0A36F14121A24E5500BBA9F1 /* BKBannerModel.m */,
 			);
 			path = AppBannerView;
 			sourceTree = "<group>";
@@ -440,8 +450,8 @@
 		0AC33DA52149397700A3DFAE /* CustomerTimer */ = {
 			isa = PBXGroup;
 			children = (
-				0AC33DA62149398600A3DFAE /* AppTimer.h */,
-				0AC33DA72149398600A3DFAE /* AppTimer.m */,
+				0AC33DA62149398600A3DFAE /* BKTimer.h */,
+				0AC33DA72149398600A3DFAE /* BKTimer.m */,
 			);
 			path = CustomerTimer;
 			sourceTree = "<group>";
@@ -594,13 +604,15 @@
 				0A3A5B642196BFE5009526F0 /* AppBaseVC.m in Sources */,
 				0A43781521994E0B001B5464 /* BKNetworkAgent.m in Sources */,
 				0A13CF8220C645780071F0D9 /* BaseNavigationController.m in Sources */,
-				0AC33DA82149398600A3DFAE /* AppTimer.m in Sources */,
+				0AC33DA82149398600A3DFAE /* BKTimer.m in Sources */,
 				0A43780F219949AC001B5464 /* BKBaseRequest.m in Sources */,
 				0A3A5B4F2196B6B8009526F0 /* NSString+Date.m in Sources */,
 				0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */,
 				0A9D30F3219EC65800D545DD /* BKChainRequestAgent.m in Sources */,
 				0A13CF7E20C6453D0071F0D9 /* RootVC.m in Sources */,
+				0A36F13F21A24E4000BBA9F1 /* BKBanner.m in Sources */,
 				0A3A5B552196B966009526F0 /* Dispatcher.m in Sources */,
+				0A36F14221A24E5500BBA9F1 /* BKBannerModel.m in Sources */,
 				0A13CF7520C644E90071F0D9 /* main.m in Sources */,
 				0A13CF6720C644E70071F0D9 /* AppDelegate.m in Sources */,
 				0A9D30F0219EC64600D545DD /* BKChainRequest.m in Sources */,
