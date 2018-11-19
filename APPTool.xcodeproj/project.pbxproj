@@ -17,6 +17,7 @@
 		0A13CF8C20C6FB5D0071F0D9 /* DatabaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13CF8B20C6FB5D0071F0D9 /* DatabaseTool.m */; };
 		0A36F13F21A24E4000BBA9F1 /* BKBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A36F13E21A24E4000BBA9F1 /* BKBanner.m */; };
 		0A36F14221A24E5500BBA9F1 /* BKBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A36F14121A24E5500BBA9F1 /* BKBannerModel.m */; };
+		0A36F14621A2885B00BBA9F1 /* BKBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A36F14521A2885B00BBA9F1 /* BKBannerCell.m */; };
 		0A3A5B3F2196AFCD009526F0 /* UIView+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B3E2196AFCD009526F0 /* UIView+Utility.m */; };
 		0A3A5B462196B3C3009526F0 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B452196B3C3009526F0 /* NSString+MD5.m */; };
 		0A3A5B4B2196B4AA009526F0 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B4A2196B4AA009526F0 /* NSString+Size.m */; };
@@ -69,6 +70,8 @@
 		0A36F13E21A24E4000BBA9F1 /* BKBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKBanner.m; sourceTree = "<group>"; };
 		0A36F14021A24E5500BBA9F1 /* BKBannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKBannerModel.h; sourceTree = "<group>"; };
 		0A36F14121A24E5500BBA9F1 /* BKBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKBannerModel.m; sourceTree = "<group>"; };
+		0A36F14421A2885B00BBA9F1 /* BKBannerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKBannerCell.h; sourceTree = "<group>"; };
+		0A36F14521A2885B00BBA9F1 /* BKBannerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKBannerCell.m; sourceTree = "<group>"; };
 		0A3A5B3D2196AFCD009526F0 /* UIView+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Utility.h"; sourceTree = "<group>"; };
 		0A3A5B3E2196AFCD009526F0 /* UIView+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utility.m"; sourceTree = "<group>"; };
 		0A3A5B442196B3C3009526F0 /* NSString+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 			children = (
 				0A36F13D21A24E4000BBA9F1 /* BKBanner.h */,
 				0A36F13E21A24E4000BBA9F1 /* BKBanner.m */,
+				0A36F14421A2885B00BBA9F1 /* BKBannerCell.h */,
+				0A36F14521A2885B00BBA9F1 /* BKBannerCell.m */,
 				0A36F14021A24E5500BBA9F1 /* BKBannerModel.h */,
 				0A36F14121A24E5500BBA9F1 /* BKBannerModel.m */,
 			);
@@ -591,6 +596,7 @@
 				0A3A5B3F2196AFCD009526F0 /* UIView+Utility.m in Sources */,
 				0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */,
 				0A13CF8520C645AC0071F0D9 /* BaseTabBarController.m in Sources */,
+				0A36F14621A2885B00BBA9F1 /* BKBannerCell.m in Sources */,
 				0A3A5B4B2196B4AA009526F0 /* NSString+Size.m in Sources */,
 				0ADDC4E1219C38E60025C825 /* BKBatchRequest.m in Sources */,
 				0A3A5B5B2196BA28009526F0 /* DispatcherManager.m in Sources */,

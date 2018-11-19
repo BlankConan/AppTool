@@ -10,4 +10,5 @@ target 'APPTool' do
   pod 'AFNetworking', '~> 3.2.0'
   pod 'Aspects', '~> 1.4.1'
   pod 'YYModel', '~> 1.0.4'
+  pod 'SDWebImage', '~> 4.4.2'
 end

@@ -23,5 +23,6 @@
 
 #import "AFNetworking.h"
 #import "YYModel.h"
+#import "UIImageView+WebCache.h"
 
 #endif /* AppTool_pch */

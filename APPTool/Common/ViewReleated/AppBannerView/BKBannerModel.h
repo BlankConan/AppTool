@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BKBannerModel : NSObject
 
+@property (nonatomic, copy) NSString *urlString;
+@property (nonatomic, assign) BOOL isVideo;
+
 @end
 
 NS_ASSUME_NONNULL_END
