@@ -8,6 +8,7 @@
 
 #import "BKBanner.h"
 #import "BKBannerModel.h"
+#import "BKTimer.h"
 
 @interface BKBanner ()
 
@@ -15,6 +16,20 @@
 
 @implementation BKBanner
 
+#pragma mark Init
+
+- (instancetype)init {
+    
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (instancetype)initWithModelArray:(NSArray<BKBannerModel *> *)bannerModelArray {
+    return self;
+}
 
 
 @end

@@ -44,7 +44,7 @@ block();\
 dispatch_async(dispatch_get_main_queue(), block);\
 }
 
-/// ALAppDelegate相关.
+/// AppDelegate相关.
 #define kAppDelegate   (AppDelegate *)[[UIApplication sharedApplication] delegate]
 #define kAppWindow        [[[UIApplication sharedApplication] delegate] window]
 #define kAppRootVC      (RootVC *)[[[UIApplication sharedApplication] delegate] window].rootViewController
