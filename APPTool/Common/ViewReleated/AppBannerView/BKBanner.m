@@ -60,12 +60,17 @@ UIScrollViewDelegate
     
     BKBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     
-    if (_bannerModelArray.count < 2) {
+    if (_bannerModelArray.count == 1) {
         cell.model = self.bannerModelArray[indexPath.row];
     } else {
-        
-        
-        
+        // oxxxo 三个元素 两个空位
+        if (indexPath.row == 0) { // 第一个
+            cell.model = [self.bannerModelArray lastObject];
+        } else if (indexPath.row == self.bannerModelArray.count - 1) {
+            cell.model = [self.bannerModelArray firstObject];
+        } else {
+            cell.model = self.bannerModelArray[indexPath.row - 1];
+        }
     }
     return cell;
 }
