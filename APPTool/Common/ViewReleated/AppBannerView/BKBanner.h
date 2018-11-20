@@ -13,7 +13,7 @@
 
 @optional
 /// tap banner.
-- (void)bannerActionWith:(BKBannerModel *)model;
+- (void)bannerActionWithModel:(BKBannerModel *)model;
 
 @end
 
@@ -23,9 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 数据容器.
 @property (nonatomic, strong) NSArray *bannerModelArray;
 /// 点击回调block.
-@property (nonatomic, copy) void (^tapBanner)(BKBannerModel *model);
+@property (nonatomic, copy) void (^tapAction)(BKBannerModel *model);
+@property (nonatomic, weak) id<BKBannerDelegate> delegate;
 
-/// .
+/// 通过模型数组初始化.
 - (instancetype)initWithModelArray:(NSArray<BKBannerModel *> *)bannerModelArray;
 
 @end

@@ -42,6 +42,9 @@
     banner.backgroundColor = [UIColor whiteColor];
     banner.frame = CGRectMake(0, 64, PHONE_WIDTH, 280);
     [self.view addSubview:banner];
+    banner.tapAction = ^(BKBannerModel * _Nonnull model) {
+        NSLog(@"%@", model.urlString);
+    };
     
 }
 

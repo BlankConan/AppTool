@@ -43,7 +43,7 @@ UICollectionViewDelegateFlowLayout
 - (instancetype)initWithModelArray:(NSArray<BKBannerModel *> *)bannerModelArray {
     self = [self init];
     if (self) {
-        self.bannerModelArray = bannerModelArray;
+        _bannerModelArray = bannerModelArray;
     }
     return self;
 }
@@ -51,6 +51,7 @@ UICollectionViewDelegateFlowLayout
 #pragma mark - ScrollerView delegate
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+   
     [self resetContentOffset];
 }
 
@@ -58,8 +59,8 @@ UICollectionViewDelegateFlowLayout
     _isDraging = YES;
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView {
-    _isDraging = NO;
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+     _isDraging = NO;
 }
 
 #pragma mark - CollectionView Delegate
@@ -91,6 +92,24 @@ UICollectionViewDelegateFlowLayout
     return _bannerModelArray.count + 2;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    BKBannerModel *model = nil;
+    if (indexPath.row == 0) {
+        model = [self.bannerModelArray firstObject];
+    } else if (indexPath.row == self.bannerModelArray.count + 1) {
+        model = [self.bannerModelArray lastObject];
+    } else {
+        model = self.bannerModelArray[indexPath.row - 1];
+    }
+    if (_delegate &&[_delegate respondsToSelector:@selector(bannerActionWithModel:)]) {
+        [_delegate bannerActionWithModel:model];
+    }
+    if (_tapAction) {
+        _tapAction(model);
+    }
+}
+
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     return 0.0;
 }
@@ -109,6 +128,7 @@ UICollectionViewDelegateFlowLayout
     [self.container reloadData];
     if (self.bannerModelArray.count > 1) {
         [self.container scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+        [self.timer fire];
     }
 }
 
@@ -117,6 +137,15 @@ UICollectionViewDelegateFlowLayout
 - (void)loopAction {
     if (_isDraging) return;
     
+    CGFloat width = CGRectGetWidth(self.bounds);
+    CGPoint contentOffset = self.container.contentOffset;
+    NSInteger currentIndex = contentOffset.x / width;
+    // 自动滚动
+    [self.container scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:currentIndex + 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+    // 在必要的位置重置
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self resetContentOffset];
+    });
 }
 
 #pragma mark - Assistan method
@@ -148,7 +177,13 @@ UICollectionViewDelegateFlowLayout
 #pragma mark - setter & getter
 
 - (void)setBannerModelArray:(NSArray *)bannerModelArray {
+    [self.timer invalidate];
+    self.timer = nil;
     _bannerModelArray = bannerModelArray;
+    [self.container reloadData];
+    if (self.bannerModelArray.count > 1) {
+        [self.timer fire];
+    }
 }
 
 - (void)setFrame:(CGRect)frame {
@@ -158,7 +193,7 @@ UICollectionViewDelegateFlowLayout
 - (BKTimer *)timer {
     
     if (!_timer) {
-        _timer = [BKTimer timerWithTimeInterval:3 target:self selector:@selector(loopAction) userInfo:nil repeats:YES];
+        _timer = [BKTimer timerWithTimeInterval:3.0 target:self selector:@selector(loopAction) userInfo:nil repeats:YES];
     }
     return _timer;
 }

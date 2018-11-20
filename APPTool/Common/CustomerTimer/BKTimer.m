@@ -60,17 +60,17 @@
     return _timerInterval;
 }
 
-+ (instancetype)timerWithTimeInterval:(NSTimeInterval)time target:(id)target selector:(SEL)selector userInfo:(id)userInfo repeats:(BOOL)repeat {
++ (instancetype)timerWithTimeInterval:(NSTimeInterval)timeInterval target:(id)target selector:(SEL)selector userInfo:(id)userInfo repeats:(BOOL)repeat {
+ 
+    BKTimer *inTimer = [[BKTimer alloc] init];
+    inTimer->_target = target;
+    inTimer->_sel = selector;
+    inTimer->_timerInterval = timeInterval;
+    inTimer->_userInfo = userInfo;
+    inTimer->_repeat = repeat;
+    [inTimer createTimer];
     
-    BKTimer *appTimer = [[BKTimer alloc] init];
-    appTimer->_target = target;
-    appTimer->_sel = selector;
-    appTimer->_timerInterval= time;
-    appTimer->_userInfo = userInfo;
-    appTimer->_repeat = repeat;
-    [appTimer createTimer];
-    
-    return appTimer;
+    return inTimer;
 }
 
 
@@ -109,8 +109,8 @@
 - (void)createTimer {
     
     if (!_timer) {
-        self.timer = [NSTimer timerWithTimeInterval:self->_timerInterval target:self selector:@selector(timerAction) userInfo:self->_userInfo repeats:self->_repeat];
-        [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+        _timer = [NSTimer timerWithTimeInterval:self->_timerInterval target:self selector:@selector(timerAction) userInfo:self->_userInfo repeats:self->_repeat];
+        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     }
 }
 
