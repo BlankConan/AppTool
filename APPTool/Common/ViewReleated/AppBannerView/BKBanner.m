@@ -16,7 +16,8 @@ static NSString *cellID = @"BKBannerCell";
 @interface BKBanner ()
 <
 UICollectionViewDelegate,
-UICollectionViewDataSource
+UICollectionViewDataSource,
+UIScrollViewDelegate
 >
 
 @property (nonatomic, strong) BKTimer *timer;
@@ -47,6 +48,13 @@ UICollectionViewDataSource
 
 #pragma mark - Delegate
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+}
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
@@ -55,9 +63,9 @@ UICollectionViewDataSource
     if (_bannerModelArray.count < 2) {
         cell.model = self.bannerModelArray[indexPath.row];
     } else {
-        if (indexPath) {
-            
-        }
+        
+        
+        
     }
     return cell;
 }
