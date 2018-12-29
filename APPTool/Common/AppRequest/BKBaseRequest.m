@@ -63,11 +63,11 @@
 }
 
 - (NSDictionary *)responseHeaders {
-    return nil;
+    return ((NSHTTPURLResponse*)self.task.response).allHeaderFields;
 }
 
 - (NSInteger)reponseStatusCode {
-    return 0;
+    return ((NSHTTPURLResponse*)self.task.response).statusCode;
 }
 
 #pragma mark - subclass need override

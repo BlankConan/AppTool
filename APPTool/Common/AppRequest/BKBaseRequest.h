@@ -101,6 +101,9 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 
 @property (nonatomic, copy) AFConstructingBlock constructingBodyBlock;
 
+/// task.
+@property (nonatomic, strong) NSURLSessionDataTask *task;
+
 #pragma mark - response
 
 @property (nonatomic, copy) id responseObject;

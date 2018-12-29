@@ -8,7 +8,6 @@
 
 #import "BKResult.h"
 
-
 @implementation BKResult
 
 + (instancetype)parseTotalData:(NSDictionary *)jsonDic {

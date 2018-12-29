@@ -33,6 +33,7 @@
 		0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */; };
 		0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E699210B29930061BA14 /* UIControl+Statics.m */; };
 		0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */; };
+		0A647CFD21B69DF200D82C3D /* UIButton+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A647CFC21B69DF200D82C3D /* UIButton+Position.m */; };
 		0A73AFC521990BA9008423C3 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC421990BA9008423C3 /* UIImage+Resize.m */; };
 		0A73AFC921990DE9008423C3 /* UIImage+Pure.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC821990DE9008423C3 /* UIImage+Pure.m */; };
 		0A9D30ED219EB8E700D545DD /* BaiDuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D30EC219EB8E700D545DD /* BaiDuRequest.m */; };
@@ -106,6 +107,8 @@
 		0A45E699210B29930061BA14 /* UIControl+Statics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Statics.m"; sourceTree = "<group>"; };
 		0A45E69D210C197E0061BA14 /* UIGestureRecognizer+Statics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Statics.h"; sourceTree = "<group>"; };
 		0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Statics.m"; sourceTree = "<group>"; };
+		0A647CFB21B69DF200D82C3D /* UIButton+Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Position.h"; sourceTree = "<group>"; };
+		0A647CFC21B69DF200D82C3D /* UIButton+Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Position.m"; sourceTree = "<group>"; };
 		0A73AFC321990BA9008423C3 /* UIImage+Resize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		0A73AFC421990BA9008423C3 /* UIImage+Resize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		0A73AFC721990DE9008423C3 /* UIImage+Pure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Pure.h"; sourceTree = "<group>"; };
@@ -343,6 +346,7 @@
 		0A3A5B612196BE7E009526F0 /* ViewReleated */ = {
 			isa = PBXGroup;
 			children = (
+				0A647CFA21B69DC300D82C3D /* ButtonPosition */,
 				0A3A5BEE2196CBD1009526F0 /* AppBannerView */,
 				0A3A5B3C2196AFA2009526F0 /* UIViewUtility */,
 			);
@@ -413,6 +417,15 @@
 				0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */,
 			);
 			path = Statics;
+			sourceTree = "<group>";
+		};
+		0A647CFA21B69DC300D82C3D /* ButtonPosition */ = {
+			isa = PBXGroup;
+			children = (
+				0A647CFB21B69DF200D82C3D /* UIButton+Position.h */,
+				0A647CFC21B69DF200D82C3D /* UIButton+Position.m */,
+			);
+			path = ButtonPosition;
 			sourceTree = "<group>";
 		};
 		0A73AFC121990B76008423C3 /* ImageUtitlity */ = {
@@ -621,6 +634,7 @@
 				0A36F14221A24E5500BBA9F1 /* BKBannerModel.m in Sources */,
 				0A13CF7520C644E90071F0D9 /* main.m in Sources */,
 				0A13CF6720C644E70071F0D9 /* AppDelegate.m in Sources */,
+				0A647CFD21B69DF200D82C3D /* UIButton+Position.m in Sources */,
 				0A9D30F0219EC64600D545DD /* BKChainRequest.m in Sources */,
 				0A437812219949C8001B5464 /* BKRequest.m in Sources */,
 				0A73AFC521990BA9008423C3 /* UIImage+Resize.m in Sources */,
@@ -756,7 +770,8 @@
 			baseConfigurationReference = 5A03D62366E7E1EDED80B82C /* Pods-APPTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = X39TD4U746;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "${SRCROOT}/APPTool/Header/AppTool.pch";
 				INFOPLIST_FILE = APPTool/Resource/Info.plist;
@@ -765,8 +780,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sks.APPTool;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nipaiyi.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "NiPaiYi iPad Provisioning Profile";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
@@ -777,7 +793,8 @@
 			baseConfigurationReference = C6A5894A5D6D2D963D78FD65 /* Pods-APPTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = X39TD4U746;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "${SRCROOT}/APPTool/Header/AppTool.pch";
 				INFOPLIST_FILE = APPTool/Resource/Info.plist;
@@ -786,8 +803,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sks.APPTool;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nipaiyi.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "NiPaiYi iPad Provisioning Profile";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};

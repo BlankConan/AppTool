@@ -11,6 +11,8 @@
 
 #import "BKBannerModel.h"
 #import "BKBanner.h"
+#import "UIButton+Position.h"
+
 
 @interface RootVC ()
 
@@ -45,6 +47,14 @@
     banner.tapAction = ^(BKBannerModel * _Nonnull model) {
         NSLog(@"%@", model.urlString);
     };
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [button setTitle:@"测试字划线" forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor blackColor];
+    [button setFrame:CGRectMake(150, 200, 150, 30)];
+    [self.view addSubview:button];
+    
     
 }
 

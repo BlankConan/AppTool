@@ -11,4 +11,6 @@ target 'APPTool' do
   pod 'Aspects', '~> 1.4.1'
   pod 'YYModel', '~> 1.0.4'
   pod 'SDWebImage', '~> 4.4.2'
+  pod 'YYImage', '~> 1.0.4'
+  pod 'YYWebImage', '~> 1.0.5'
 end

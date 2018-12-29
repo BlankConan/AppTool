@@ -14,8 +14,6 @@ static dispatch_semaphore_t sema;
     AFHTTPSessionManager *_manager;
     // 通过request hash 找 task
     NSMutableDictionary *_requestTaskRecorder;
-    // 通过 task hash 找 request
-    NSMutableDictionary *_taskRequestRecorder;
 }
 
 
@@ -57,15 +55,16 @@ static dispatch_semaphore_t sema;
 }
 
 - (void)cancelRequest:(BKBaseRequest *)request {
-    [[self taskForRequest:request] cancel];
+    
+    [request.task cancel];
     [request clearCompletionBlock];
     [self removeOperation:request];
 }
 
 - (void)cancelAllRequest {
-    NSArray *allReqeust = [_taskRequestRecorder allValues];
+    NSArray *allReqeust = [_requestTaskRecorder allValues];
     for (BKBaseRequest *request in allReqeust) {
-        [request stop];
+        [self cancelRequest:request];
     }
 }
 
@@ -92,10 +91,7 @@ static dispatch_semaphore_t sema;
     //    policy.validatesDomainName = YES;
     //    _manager.securityPolicy = policy;
     _manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-    
-    
     _requestTaskRecorder = [NSMutableDictionary dictionaryWithCapacity:0];
-    _taskRequestRecorder = [NSMutableDictionary dictionaryWithCapacity:0];
 }
 
 #pragma mark Handle Request
@@ -165,10 +161,8 @@ static dispatch_semaphore_t sema;
         [_manager.requestSerializer setValue:value forHTTPHeaderField:key];
     }
  
-    
-    NSURLSessionDataTask *task = nil;
     if (method == BKRequestMethodGet) {
-        task = [_manager GET:urlStr parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+        request.task = [_manager GET:urlStr parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
             [self handleRequestProgress:downloadProgress request:request];
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponceWithTask:task responseObject:responseObject error:nil];
@@ -178,7 +172,7 @@ static dispatch_semaphore_t sema;
     } else if (method == BKRequestMethodPost) {
         
         if (request.constructingBodyBlock == nil) {
-            task = [_manager POST:urlStr parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+            request.task = [_manager POST:urlStr parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
                 [self handleRequestProgress:uploadProgress request:request];
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [self handleResponceWithTask:task responseObject:responseObject error:nil];
@@ -186,7 +180,7 @@ static dispatch_semaphore_t sema;
                 [self handleResponceWithTask:task responseObject:nil error:error];
             }];
         } else {
-            task = [_manager POST:urlStr parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+            request.task = [_manager POST:urlStr parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
                 // 构造数据
             } progress:^(NSProgress * _Nonnull uploadProgress) {
                 [self handleRequestProgress:uploadProgress request:request];
@@ -198,7 +192,7 @@ static dispatch_semaphore_t sema;
         }
         
     } else if (method == BKRequestMethodPut) {
-        task = [_manager PUT:urlStr parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        request.task = [_manager PUT:urlStr parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [self handleResponceWithTask:task responseObject:responseObject error:nil];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [self handleResponceWithTask:task responseObject:nil error:error];
@@ -207,7 +201,8 @@ static dispatch_semaphore_t sema;
         // Delete
         return;
     }
-    [self addOperation:request task:task];
+    
+    [self addOperationWithRequest:request];
     
 }
 
@@ -221,11 +216,13 @@ static dispatch_semaphore_t sema;
 - (void)handleResponceWithTask:(NSURLSessionDataTask *)task responseObject:(id)responseObject error:(NSError *)error {
     
     NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-    BKBaseRequest *request = [self requestForTask:task];
+    NSString *key = [self taskHashKey:task];
+    BKBaseRequest *request = _requestTaskRecorder[key];
     if (request) {
         request.responseHeaders = response.allHeaderFields;
         request.reponseStatusCode = response.statusCode;
         request.error = error;
+        request.responseObject = responseObject;
         
         if ([self statusCodeValidator:response.statusCode]) {
             // 先执行block回调
@@ -268,50 +265,28 @@ static dispatch_semaphore_t sema;
 
 #pragma mark - Request Task Record
 
-- (NSString *)hashKey:(id<NSObject>)request {
-    
-    NSString *key = [NSString stringWithFormat:@"%lu", [request hash]];
-    return key;
-}
-
 - (NSString *)taskHashKey:(NSURLSessionDataTask *)task {
     
     NSString *key = [NSString stringWithFormat:@"%lu", [task hash]];
     return key;
 }
 
-- (void)addOperation:(BKBaseRequest *)request task:(NSURLSessionDataTask *)task {
+- (void)addOperationWithRequest:(BKBaseRequest *)request {
     
-    NSString *reqkey = [self hashKey:request];
-    NSString *taskKey = [self hashKey:task];
+    NSString *key = [self taskHashKey:request.task];
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
-    _requestTaskRecorder[reqkey] = task;
-    _taskRequestRecorder[taskKey] = request;
+    _requestTaskRecorder[key] = request;
     dispatch_semaphore_signal(sema);
 }
 
 - (void)removeOperation:(BKBaseRequest *)request {
     
-    NSString *reqkey = [self hashKey:request];
+    NSString *key = [self taskHashKey:request.task];
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
-    NSString *taskKey = [self hashKey:[_requestTaskRecorder objectForKey:reqkey]];
-    [_requestTaskRecorder removeObjectForKey:reqkey];
-    [_taskRequestRecorder removeObjectForKey:taskKey];
+    [_requestTaskRecorder removeObjectForKey:key];
     dispatch_semaphore_signal(sema);
 }
 
-- (NSURLSessionDataTask *)taskForRequest:(BKBaseRequest *)request {
-    
-    NSString *reqkey = [self hashKey:request];
-    NSURLSessionDataTask *task = [_requestTaskRecorder objectForKey:reqkey];
-    return task;
-}
-
-- (BKBaseRequest *)requestForTask:(NSURLSessionDataTask *)task {
-    NSString *taskKey = [self hashKey:task];
-    BKBaseRequest *request = [_taskRequestRecorder objectForKey:taskKey];
-    return request;
-}
 
 /// check Status Code
 - (BOOL)statusCodeValidator:(NSInteger)code {
