@@ -28,8 +28,8 @@
 #pragma mark - Private
 
 // 解析 字典里面的数据
-+ (instancetype)parseJsonData:(NSDictionary *)dic {
-    id result = [[self class] yy_modelWithDictionary:dic];
++ (instancetype)parseJsonData:(id)responceData {
+    id result = [[self class] yy_modelWithDictionary:responceData];
     return result;
 }
 

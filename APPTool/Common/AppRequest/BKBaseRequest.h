@@ -90,7 +90,7 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 /// request base arguments.
 @property (nonatomic, strong) NSDictionary *requestBaseArguments;
 /// request method.
-@property (nonatomic, assign) BKRequestMethod reqeustMethod;
+@property (nonatomic, assign) BKRequestMethod requestMethod;
 /// request Serializer type.
 @property (nonatomic, assign) BKRequestSerializerType requestSerializerType;
 

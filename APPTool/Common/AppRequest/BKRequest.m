@@ -24,7 +24,8 @@
 #pragma mark overrid
 
 - (NSString *)baseUrl {
-    return @"";
+    NSString *host = [NSString stringWithFormat:@"%@%@", ProductDomainName, SaasPara];
+    return host;
 }
 
 - (NSString *)cdnUrl {
@@ -34,6 +35,10 @@
 
 - (NSDictionary *)requestBaseArguments {
     return @{};
+}
+
+- (BKRequestSerializerType)requestSerializerType {
+    return BKRequestSerializerJSON;
 }
 
 - (void)start {
@@ -58,9 +63,9 @@
 #pragma mark - Private
 
 - (void)convertJSON {
-    NSDictionary *resultDic = self.responseObject;
+    id responseData = self.responseObject;
     if ([self jsonModeClass] && [[self jsonModeClass] isSubclassOfClass:[BKResult class]]) {
-        id obj = [[self jsonModeClass] parseTotalData:resultDic];
+        id obj = [[self jsonModeClass] parseTotalData:responseData];
         self.result = obj;
         if ([self ignoreCache] == NO) {
             [self cacheResult];

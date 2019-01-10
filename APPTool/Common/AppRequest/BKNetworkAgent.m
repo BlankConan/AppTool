@@ -40,13 +40,16 @@ static dispatch_semaphore_t sema;
     NSString *url = [self buildRequestUrlStr:request];
     
     id requestArguments = [request requestArguments];
-    NSDictionary *baseArguments = [request requestBaseArguments];
     
+    NSDictionary *baseArguments = [request requestBaseArguments];
+    if (baseArguments == nil) {
+        baseArguments = [NSDictionary dictionary];
+    }
     NSMutableDictionary *arguments = [baseArguments mutableCopy];
     [arguments setValuesForKeysWithDictionary:requestArguments];
     if (arguments.allKeys.count == 0) arguments = nil;
-
-    BKRequestMethod method = [request reqeustMethod];
+    
+    BKRequestMethod method = [request requestMethod];
     if (method == BKRequestMethodGet && arguments) {
         NSData *data = [NSJSONSerialization dataWithJSONObject:arguments options:NSJSONWritingPrettyPrinted error:nil];
         arguments = [NSMutableDictionary dictionaryWithObject:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] forKey:@"queryJson"];
@@ -87,10 +90,11 @@ static dispatch_semaphore_t sema;
     // 2. 通过 RequestSerializer，设置超时时间s
     _manager = [AFHTTPSessionManager manager];
     _manager.operationQueue.maxConcurrentOperationCount = 10;
-    // 添加新的解析类型
+    // 创建新的 返回数据解析类型
     NSMutableSet *contentTypeSet = [[[_manager responseSerializer] acceptableContentTypes] mutableCopy];
     [contentTypeSet addObject:@"text/html"];
     _manager.responseSerializer.acceptableContentTypes = [NSSet setWithSet:contentTypeSet];
+    
     //    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey];
     //    policy.validatesDomainName = YES;
     //    _manager.securityPolicy = policy;
@@ -121,8 +125,7 @@ static dispatch_semaphore_t sema;
         baseUrlStr = [request baseUrl];
     }
     
-    NSString *buildUrl = [NSString stringWithFormat:@"%@%@", baseUrlStr, detailUrl];
-    buildUrl = [buildUrl stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
+    NSString *buildUrl = [baseUrlStr stringByAppendingPathComponent:detailUrl];
     return buildUrl;
 }
 
@@ -136,18 +139,15 @@ static dispatch_semaphore_t sema;
  */
 - (void)request:(BKBaseRequest *)request url:(NSString *)urlStr parameter:(id)params {
     
-    BKRequestMethod method = [request reqeustMethod];
+    BKRequestMethod method = [request requestMethod];
     
     // request Serializer configure
     // 1. create serializer
     if (request.requestSerializerType == BKRequestSerializerHTTP) {
         _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-        _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     } else if (request.requestSerializerType == BKRequestSerializerJSON) {
         _manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        _manager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
-    _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     
     // 2. set timeout
     _manager.requestSerializer.timeoutInterval = request.requestTimeoutInterval;
