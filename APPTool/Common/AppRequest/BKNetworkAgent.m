@@ -87,6 +87,10 @@ static dispatch_semaphore_t sema;
     // 2. 通过 RequestSerializer，设置超时时间s
     _manager = [AFHTTPSessionManager manager];
     _manager.operationQueue.maxConcurrentOperationCount = 10;
+    // 添加新的解析类型
+    NSMutableSet *contentTypeSet = [[[_manager responseSerializer] acceptableContentTypes] mutableCopy];
+    [contentTypeSet addObject:@"text/html"];
+    _manager.responseSerializer.acceptableContentTypes = [NSSet setWithSet:contentTypeSet];
     //    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey];
     //    policy.validatesDomainName = YES;
     //    _manager.securityPolicy = policy;
