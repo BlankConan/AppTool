@@ -50,7 +50,7 @@ static dispatch_semaphore_t sema;
     NSMutableDictionary *arguments = [baseArguments mutableCopy];
     [arguments setValuesForKeysWithDictionary:requestArguments];
     if (arguments.allKeys.count == 0) arguments = nil;
-    
+    // 看接口是否需要包一层
 //    BKRequestMethod method = [request requestMethod];
 //    if (method == BKRequestMethodGet && arguments) {
 //        NSData *data = [NSJSONSerialization dataWithJSONObject:arguments options:NSJSONWritingPrettyPrinted error:nil];

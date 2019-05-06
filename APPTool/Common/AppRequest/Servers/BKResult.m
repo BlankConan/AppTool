@@ -32,7 +32,7 @@
 
 // 解析 字典里面的数据
 + (instancetype)parseJsonData:(id)responceData {
-    id result = [[self class] yy_modelWithJSON:responceData];
+    id result = [[self class] yy_modelWithDictionary:responceData];
     return result;
 }
 

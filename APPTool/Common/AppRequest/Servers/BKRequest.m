@@ -40,6 +40,7 @@
     return BKRequestMethodGet;
 }
 
+// 默认为form表单格式
 - (BKRequestSerializerType)requestSerializerType {
     return BKRequestSerializerHTTP;
 }
@@ -67,7 +68,6 @@
 
 - (void)convertJSON {
     id responseData = self.responseObject;
-   
     if ([self jsonModeClass] && [[self jsonModeClass] isSubclassOfClass:[BKResult class]]) {
         id obj = [[self jsonModeClass] parseTotalData:responseData];
         self.result = obj;
