@@ -8,6 +8,8 @@
 
 #import "BKNetworkAgent.h"
 #import "BKRequest.h"
+#import "PGRequestResponseCheck.h"
+
 static dispatch_semaphore_t sema;
 
 @implementation BKNetworkAgent {
@@ -40,17 +42,20 @@ static dispatch_semaphore_t sema;
     NSString *url = [self buildRequestUrlStr:request];
     
     id requestArguments = [request requestArguments];
-    NSDictionary *baseArguments = [request requestBaseArguments];
     
+    NSDictionary *baseArguments = [request requestBaseArguments];
+    if (baseArguments == nil) {
+        baseArguments = [NSDictionary dictionary];
+    }
     NSMutableDictionary *arguments = [baseArguments mutableCopy];
     [arguments setValuesForKeysWithDictionary:requestArguments];
     if (arguments.allKeys.count == 0) arguments = nil;
-
-    BKRequestMethod method = [request reqeustMethod];
-    if (method == BKRequestMethodGet && arguments) {
-        NSData *data = [NSJSONSerialization dataWithJSONObject:arguments options:NSJSONWritingPrettyPrinted error:nil];
-        arguments = [NSMutableDictionary dictionaryWithObject:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] forKey:@"queryJson"];
-    }
+    
+//    BKRequestMethod method = [request requestMethod];
+//    if (method == BKRequestMethodGet && arguments) {
+//        NSData *data = [NSJSONSerialization dataWithJSONObject:arguments options:NSJSONWritingPrettyPrinted error:nil];
+//        arguments = [NSMutableDictionary dictionaryWithObject:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] forKey:@"queryJson"];
+//    }
     [self request:request url:url parameter:arguments];
 }
 
@@ -87,6 +92,11 @@ static dispatch_semaphore_t sema;
     // 2. 通过 RequestSerializer，设置超时时间s
     _manager = [AFHTTPSessionManager manager];
     _manager.operationQueue.maxConcurrentOperationCount = 10;
+    // 创建新的 返回数据解析类型
+    NSMutableSet *contentTypeSet = [[[_manager responseSerializer] acceptableContentTypes] mutableCopy];
+    [contentTypeSet addObject:@"text/html"];
+    _manager.responseSerializer.acceptableContentTypes = [NSSet setWithSet:contentTypeSet];
+    
     //    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey];
     //    policy.validatesDomainName = YES;
     //    _manager.securityPolicy = policy;
@@ -117,8 +127,7 @@ static dispatch_semaphore_t sema;
         baseUrlStr = [request baseUrl];
     }
     
-    NSString *buildUrl = [NSString stringWithFormat:@"%@%@", baseUrlStr, detailUrl];
-    buildUrl = [buildUrl stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
+    NSString *buildUrl = [baseUrlStr stringByAppendingPathComponent:detailUrl];
     return buildUrl;
 }
 
@@ -132,18 +141,15 @@ static dispatch_semaphore_t sema;
  */
 - (void)request:(BKBaseRequest *)request url:(NSString *)urlStr parameter:(id)params {
     
-    BKRequestMethod method = [request reqeustMethod];
+    BKRequestMethod method = [request requestMethod];
     
     // request Serializer configure
     // 1. create serializer
     if (request.requestSerializerType == BKRequestSerializerHTTP) {
         _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-        _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     } else if (request.requestSerializerType == BKRequestSerializerJSON) {
         _manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        _manager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
-    _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     
     // 2. set timeout
     _manager.requestSerializer.timeoutInterval = request.requestTimeoutInterval;
@@ -180,9 +186,8 @@ static dispatch_semaphore_t sema;
                 [self handleResponceWithTask:task responseObject:nil error:error];
             }];
         } else {
-            request.task = [_manager POST:urlStr parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-                // 构造数据
-            } progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+            request.task = [_manager POST:urlStr parameters:params constructingBodyWithBlock:request.constructingBodyBlock progress:^(NSProgress * _Nonnull uploadProgress) {
                 [self handleRequestProgress:uploadProgress request:request];
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [self handleResponceWithTask:task responseObject:responseObject error:nil];
@@ -223,17 +228,33 @@ static dispatch_semaphore_t sema;
         request.reponseStatusCode = response.statusCode;
         request.error = error;
         request.responseObject = responseObject;
-        
+        // http状态码判断
         if ([self statusCodeValidator:response.statusCode]) {
-            // 先执行block回调
-            if (request.successCompletionBlock) {
+            
+            NSInteger code = -1;
+            if (responseObject && [responseObject isKindOfClass:[NSDictionary class]]) {
+                code = [[responseObject valueForKey:@"code"] integerValue];
+            }
+            if (code == 0) {
                 // 自动数据解析
                 [request requestSuccessFilter];
-                // 成功回调
-                request.successCompletionBlock(request);
+                // 先执行block回调
+                if (request.successCompletionBlock) {
+                    // 成功回调
+                    request.successCompletionBlock(request);
+                }
+                
+            } else {
+                // 处理异常 code
+                if (request.exceptCodeBlock) {
+                    request.exceptCodeBlock(code,[NSString stringWithFormat:@"%@", [responseObject valueForKey:@"msg"]]);
+                } else {
+                    [PGRequestResponseCheck checkResponse:responseObject];
+                }
             }
+            
             // 再执行代理回调
-            if (request.delegate) {
+            if (request.delegate && [request.delegate respondsToSelector:@selector(requestFinished:)]) {
                 [request.delegate requestFinished:request];
             }
             
@@ -242,7 +263,7 @@ static dispatch_semaphore_t sema;
                 request.failureCompletionBlock(request);
             }
             
-            if (request.delegate) {
+            if (request.delegate && [request.delegate respondsToSelector:@selector(requestFailured:)]) {
                 [request.delegate requestFailured:request];
             }
         }
@@ -267,7 +288,7 @@ static dispatch_semaphore_t sema;
 
 - (NSString *)taskHashKey:(NSURLSessionDataTask *)task {
     
-    NSString *key = [NSString stringWithFormat:@"%lu", [task hash]];
+    NSString *key = [NSString stringWithFormat:@"%lu", (unsigned long)[task hash]];
     return key;
 }
 

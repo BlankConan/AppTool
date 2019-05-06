@@ -61,7 +61,7 @@
     [[BKChainRequestAgent shareInstance] removeChainRequest:self];
 }
 
-- (void)addRequest:(BKBaseRequest *)baseRequest callBack:(nullable ChainRequestCallBack)callBack {
+- (void)addRequset:(BKBaseRequest *)baseRequest callBack:(nullable ChainRequestCallBack)callBack {
     
     [_requestArr addObject:baseRequest];
     if (callBack) {

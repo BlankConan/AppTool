@@ -24,7 +24,7 @@
 #pragma mark overrid
 
 - (NSString *)baseUrl {
-    return @"";
+    return @"此处填写baseurl";
 }
 
 - (NSString *)cdnUrl {
@@ -33,7 +33,15 @@
 
 
 - (NSDictionary *)requestBaseArguments {
-    return @{};
+    return @{@"key":@"此处填写基参"};
+}
+
+- (BKRequestMethod)requestMethod {
+    return BKRequestMethodGet;
+}
+
+- (BKRequestSerializerType)requestSerializerType {
+    return BKRequestSerializerHTTP;
 }
 
 - (void)start {
@@ -58,9 +66,10 @@
 #pragma mark - Private
 
 - (void)convertJSON {
-    NSDictionary *resultDic = self.responseObject;
+    id responseData = self.responseObject;
+   
     if ([self jsonModeClass] && [[self jsonModeClass] isSubclassOfClass:[BKResult class]]) {
-        id obj = [[self jsonModeClass] parseTotalData:resultDic];
+        id obj = [[self jsonModeClass] parseTotalData:responseData];
         self.result = obj;
         if ([self ignoreCache] == NO) {
             [self cacheResult];

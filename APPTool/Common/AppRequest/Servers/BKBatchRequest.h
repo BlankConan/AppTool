@@ -84,8 +84,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param failured AppRequest instace
  */
 - (void)addRequest:(BKRequest *)request
-completeWithSuccess:(void (^)(BKRequest *))success
-          failured:(void (^)(BKRequest *))failured;
+completeWithSuccess:(void (^)(BKRequest *baseRequest))success
+          failured:(void (^)(BKRequest *baseRequest))failured;
 
 /**
  Add request to request queue and start task automatic

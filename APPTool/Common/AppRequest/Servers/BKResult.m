@@ -10,35 +10,39 @@
 
 @implementation BKResult
 
-+ (instancetype)parseTotalData:(NSDictionary *)jsonDic {
++ (instancetype)parseTotalData:(id)jsonDic {
     
     // 自动解析所有的数据，不过只让他解析 response 有关的
-    BKResult *parentResult = [BKResult parseJsonData:jsonDic];
+    id parentResult = [[self class] parseJsonData:jsonDic];
+    if (parentResult == nil) {
+        return [[self class] new];
+    }
     // 自动解析 真实数据
-    BKResult *dataResult = [[self class] parseJsonData:jsonDic[@"responseData"]];
-    dataResult.responsePk = parentResult.responsePk;
-    dataResult.responseCode = parentResult.responseCode;
-    dataResult.responseMessage = parentResult.responseMessage;
-    dataResult.responseStatus = parentResult.responseStatus;
+//    BKResult *dataResult = [[self class] parseJsonData:jsonDic[@"data"]];
+//    dataResult.responsePk = parentResult.responsePk;
+//    dataResult.responseCode = parentResult.responseCode;
+//    dataResult.responseMessage = parentResult.responseMessage;
+//    dataResult.responseStatus = parentResult.responseStatus;
     
-    return dataResult;
+    return parentResult;
 }
 
 
 #pragma mark - Private
 
 // 解析 字典里面的数据
-+ (instancetype)parseJsonData:(NSDictionary *)dic {
-    id result = [[self class] yy_modelWithDictionary:dic];
++ (instancetype)parseJsonData:(id)responceData {
+    id result = [[self class] yy_modelWithJSON:responceData];
     return result;
 }
 
 #pragma mark - YYModel 协议实现
 
 // 白名单 只有白名单里面的内容会通过
-+ (NSArray *)modelPropertyWhitelist {
-    return @[@"responseMessage", @"responseStatus", @"responseCode", @"responseMessage"];
-}
+//+ (NSArray *)modelPropertyWhitelist {
+//    return @[@"responseMessage", @"responseStatus", @"responseCode", @"responseMessage"];
+//}
+
 
 //// 黑名单
 //+ (NSArray *)modelPropertyBlacklist {

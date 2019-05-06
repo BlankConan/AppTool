@@ -27,9 +27,6 @@
 		0A3A5B5B2196BA28009526F0 /* DispatcherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B592196BA28009526F0 /* DispatcherManager.m */; };
 		0A3A5B642196BFE5009526F0 /* AppBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B632196BFE5009526F0 /* AppBaseVC.m */; };
 		0A437806219916C1001B5464 /* UIImage+Cornor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A43780321991599001B5464 /* UIImage+Cornor.m */; };
-		0A43780F219949AC001B5464 /* BKBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A43780E219949AC001B5464 /* BKBaseRequest.m */; };
-		0A437812219949C8001B5464 /* BKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A437811219949C8001B5464 /* BKRequest.m */; };
-		0A43781521994E0B001B5464 /* BKNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A43781421994E0B001B5464 /* BKNetworkAgent.m */; };
 		0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */; };
 		0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E699210B29930061BA14 /* UIControl+Statics.m */; };
 		0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A45E69E210C197E0061BA14 /* UIGestureRecognizer+Statics.m */; };
@@ -37,14 +34,18 @@
 		0A73AFC521990BA9008423C3 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC421990BA9008423C3 /* UIImage+Resize.m */; };
 		0A73AFC921990DE9008423C3 /* UIImage+Pure.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AFC821990DE9008423C3 /* UIImage+Pure.m */; };
 		0A9D30ED219EB8E700D545DD /* BaiDuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D30EC219EB8E700D545DD /* BaiDuRequest.m */; };
-		0A9D30F0219EC64600D545DD /* BKChainRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D30EF219EC64600D545DD /* BKChainRequest.m */; };
-		0A9D30F3219EC65800D545DD /* BKChainRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D30F2219EC65800D545DD /* BKChainRequestAgent.m */; };
-		0A9DB80B219989BA00C7E156 /* BKResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DB80A219989BA00C7E156 /* BKResult.m */; };
 		0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */; };
 		0AC33DA82149398600A3DFAE /* BKTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33DA72149398600A3DFAE /* BKTimer.m */; };
-		0ADDC4E1219C38E60025C825 /* BKBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADDC4E0219C38E60025C825 /* BKBatchRequest.m */; };
-		0ADDC4E4219C38FC0025C825 /* BKBatchRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADDC4E3219C38FC0025C825 /* BKBatchRequestAgent.m */; };
 		0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A8B2212B2F9E00F46BD5 /* UIView+UIResponder.m */; };
+		36E870DB2280324C0010330E /* BKChainRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E870CC2280324C0010330E /* BKChainRequestAgent.m */; };
+		36E870DC2280324C0010330E /* BKBatchRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E870CD2280324C0010330E /* BKBatchRequestAgent.m */; };
+		36E870DD2280324C0010330E /* BKResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E870CF2280324C0010330E /* BKResult.m */; };
+		36E870DE2280324C0010330E /* BKBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E870D02280324C0010330E /* BKBaseRequest.m */; };
+		36E870DF2280324C0010330E /* BKChainRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E870D12280324C0010330E /* BKChainRequest.m */; };
+		36E870E02280324C0010330E /* BKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E870D22280324C0010330E /* BKRequest.m */; };
+		36E870E12280324C0010330E /* BKNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E870D32280324C0010330E /* BKNetworkAgent.m */; };
+		36E870E22280324C0010330E /* BKBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E870D42280324C0010330E /* BKBatchRequest.m */; };
+		36E870E32280324C0010330E /* PGRequestResponseCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E870D52280324C0010330E /* PGRequestResponseCheck.m */; };
 		C43742989EA4141B1A77CCC8 /* libPods-APPTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 489F03586AF484002750922B /* libPods-APPTool.a */; };
 /* End PBXBuildFile section */
 
@@ -95,12 +96,6 @@
 		0A3A5B632196BFE5009526F0 /* AppBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBaseVC.m; sourceTree = "<group>"; };
 		0A43780221991599001B5464 /* UIImage+Cornor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cornor.h"; sourceTree = "<group>"; };
 		0A43780321991599001B5464 /* UIImage+Cornor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cornor.m"; sourceTree = "<group>"; };
-		0A43780D219949AC001B5464 /* BKBaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKBaseRequest.h; sourceTree = "<group>"; };
-		0A43780E219949AC001B5464 /* BKBaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKBaseRequest.m; sourceTree = "<group>"; };
-		0A437810219949C8001B5464 /* BKRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKRequest.h; sourceTree = "<group>"; };
-		0A437811219949C8001B5464 /* BKRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKRequest.m; sourceTree = "<group>"; };
-		0A43781321994E0B001B5464 /* BKNetworkAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKNetworkAgent.h; sourceTree = "<group>"; };
-		0A43781421994E0B001B5464 /* BKNetworkAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKNetworkAgent.m; sourceTree = "<group>"; wrapsLines = 0; };
 		0A45E695210AE2FA0061BA14 /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
 		0A45E696210AE2FA0061BA14 /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
 		0A45E698210B29930061BA14 /* UIControl+Statics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Statics.h"; sourceTree = "<group>"; };
@@ -113,24 +108,32 @@
 		0A73AFC421990BA9008423C3 /* UIImage+Resize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		0A73AFC721990DE9008423C3 /* UIImage+Pure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Pure.h"; sourceTree = "<group>"; };
 		0A73AFC821990DE9008423C3 /* UIImage+Pure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Pure.m"; sourceTree = "<group>"; };
-		0A9D30E9219EAA4D00D545DD /* BKBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKBatchRequest.h; sourceTree = "<group>"; };
 		0A9D30EB219EB8E700D545DD /* BaiDuRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiDuRequest.h; sourceTree = "<group>"; };
 		0A9D30EC219EB8E700D545DD /* BaiDuRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaiDuRequest.m; sourceTree = "<group>"; };
-		0A9D30EE219EC64600D545DD /* BKChainRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKChainRequest.h; sourceTree = "<group>"; };
-		0A9D30EF219EC64600D545DD /* BKChainRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKChainRequest.m; sourceTree = "<group>"; };
-		0A9D30F1219EC65800D545DD /* BKChainRequestAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKChainRequestAgent.h; sourceTree = "<group>"; };
-		0A9D30F2219EC65800D545DD /* BKChainRequestAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKChainRequestAgent.m; sourceTree = "<group>"; };
-		0A9DB809219989BA00C7E156 /* BKResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKResult.h; sourceTree = "<group>"; };
-		0A9DB80A219989BA00C7E156 /* BKResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKResult.m; sourceTree = "<group>"; };
 		0ABAFB23213D8B3E00F8AF0C /* DispatchTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchTestVC.h; sourceTree = "<group>"; };
 		0ABAFB24213D8B3E00F8AF0C /* DispatchTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DispatchTestVC.m; sourceTree = "<group>"; };
 		0AC33DA62149398600A3DFAE /* BKTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKTimer.h; sourceTree = "<group>"; };
 		0AC33DA72149398600A3DFAE /* BKTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKTimer.m; sourceTree = "<group>"; };
-		0ADDC4E0219C38E60025C825 /* BKBatchRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKBatchRequest.m; sourceTree = "<group>"; };
-		0ADDC4E2219C38FC0025C825 /* BKBatchRequestAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKBatchRequestAgent.h; sourceTree = "<group>"; };
-		0ADDC4E3219C38FC0025C825 /* BKBatchRequestAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKBatchRequestAgent.m; sourceTree = "<group>"; };
 		0AF3A8B1212B2F9E00F46BD5 /* UIView+UIResponder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+UIResponder.h"; sourceTree = "<group>"; };
 		0AF3A8B2212B2F9E00F46BD5 /* UIView+UIResponder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIResponder.m"; sourceTree = "<group>"; };
+		36E870C92280324C0010330E /* BKNetworkAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNetworkAgent.h; sourceTree = "<group>"; };
+		36E870CA2280324C0010330E /* BKBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKBatchRequest.h; sourceTree = "<group>"; };
+		36E870CB2280324C0010330E /* BKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKRequest.h; sourceTree = "<group>"; };
+		36E870CC2280324C0010330E /* BKChainRequestAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKChainRequestAgent.m; sourceTree = "<group>"; };
+		36E870CD2280324C0010330E /* BKBatchRequestAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKBatchRequestAgent.m; sourceTree = "<group>"; };
+		36E870CE2280324C0010330E /* PGRequestResponseCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGRequestResponseCheck.h; sourceTree = "<group>"; };
+		36E870CF2280324C0010330E /* BKResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKResult.m; sourceTree = "<group>"; };
+		36E870D02280324C0010330E /* BKBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKBaseRequest.m; sourceTree = "<group>"; };
+		36E870D12280324C0010330E /* BKChainRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKChainRequest.m; sourceTree = "<group>"; };
+		36E870D22280324C0010330E /* BKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKRequest.m; sourceTree = "<group>"; };
+		36E870D32280324C0010330E /* BKNetworkAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNetworkAgent.m; sourceTree = "<group>"; };
+		36E870D42280324C0010330E /* BKBatchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKBatchRequest.m; sourceTree = "<group>"; };
+		36E870D52280324C0010330E /* PGRequestResponseCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGRequestResponseCheck.m; sourceTree = "<group>"; };
+		36E870D62280324C0010330E /* BKBatchRequestAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKBatchRequestAgent.h; sourceTree = "<group>"; };
+		36E870D72280324C0010330E /* BKChainRequestAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKChainRequestAgent.h; sourceTree = "<group>"; };
+		36E870D82280324C0010330E /* BKChainRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKChainRequest.h; sourceTree = "<group>"; };
+		36E870D92280324C0010330E /* BKBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKBaseRequest.h; sourceTree = "<group>"; };
+		36E870DA2280324C0010330E /* BKResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKResult.h; sourceTree = "<group>"; };
 		489F03586AF484002750922B /* libPods-APPTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APPTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A03D62366E7E1EDED80B82C /* Pods-APPTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPTool/Pods-APPTool.debug.xcconfig"; sourceTree = "<group>"; };
 		C6A5894A5D6D2D963D78FD65 /* Pods-APPTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPTool/Pods-APPTool.release.xcconfig"; sourceTree = "<group>"; };
@@ -378,22 +381,9 @@
 		0A43780C2199497E001B5464 /* AppRequest */ = {
 			isa = PBXGroup;
 			children = (
-				0A437810219949C8001B5464 /* BKRequest.h */,
-				0A437811219949C8001B5464 /* BKRequest.m */,
-				0A9DB809219989BA00C7E156 /* BKResult.h */,
-				0A9DB80A219989BA00C7E156 /* BKResult.m */,
-				0A43780D219949AC001B5464 /* BKBaseRequest.h */,
-				0A43780E219949AC001B5464 /* BKBaseRequest.m */,
-				0A43781321994E0B001B5464 /* BKNetworkAgent.h */,
-				0A43781421994E0B001B5464 /* BKNetworkAgent.m */,
-				0A9D30EE219EC64600D545DD /* BKChainRequest.h */,
-				0A9D30EF219EC64600D545DD /* BKChainRequest.m */,
-				0A9D30F1219EC65800D545DD /* BKChainRequestAgent.h */,
-				0A9D30F2219EC65800D545DD /* BKChainRequestAgent.m */,
-				0A9D30E9219EAA4D00D545DD /* BKBatchRequest.h */,
-				0ADDC4E0219C38E60025C825 /* BKBatchRequest.m */,
-				0ADDC4E2219C38FC0025C825 /* BKBatchRequestAgent.h */,
-				0ADDC4E3219C38FC0025C825 /* BKBatchRequestAgent.m */,
+				36E870CE2280324C0010330E /* PGRequestResponseCheck.h */,
+				36E870D52280324C0010330E /* PGRequestResponseCheck.m */,
+				36E870C82280324C0010330E /* Servers */,
 			);
 			path = AppRequest;
 			sourceTree = "<group>";
@@ -511,6 +501,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		36E870C82280324C0010330E /* Servers */ = {
+			isa = PBXGroup;
+			children = (
+				36E870C92280324C0010330E /* BKNetworkAgent.h */,
+				36E870CA2280324C0010330E /* BKBatchRequest.h */,
+				36E870CB2280324C0010330E /* BKRequest.h */,
+				36E870CC2280324C0010330E /* BKChainRequestAgent.m */,
+				36E870CD2280324C0010330E /* BKBatchRequestAgent.m */,
+				36E870CF2280324C0010330E /* BKResult.m */,
+				36E870D02280324C0010330E /* BKBaseRequest.m */,
+				36E870D12280324C0010330E /* BKChainRequest.m */,
+				36E870D22280324C0010330E /* BKRequest.m */,
+				36E870D32280324C0010330E /* BKNetworkAgent.m */,
+				36E870D42280324C0010330E /* BKBatchRequest.m */,
+				36E870D62280324C0010330E /* BKBatchRequestAgent.h */,
+				36E870D72280324C0010330E /* BKChainRequestAgent.h */,
+				36E870D82280324C0010330E /* BKChainRequest.h */,
+				36E870D92280324C0010330E /* BKBaseRequest.h */,
+				36E870DA2280324C0010330E /* BKResult.h */,
+			);
+			path = Servers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -602,41 +615,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A9DB80B219989BA00C7E156 /* BKResult.m in Sources */,
 				0A437806219916C1001B5464 /* UIImage+Cornor.m in Sources */,
 				0A13CF8C20C6FB5D0071F0D9 /* DatabaseTool.m in Sources */,
 				0A73AFC921990DE9008423C3 /* UIImage+Pure.m in Sources */,
+				36E870E22280324C0010330E /* BKBatchRequest.m in Sources */,
 				0A3A5B3F2196AFCD009526F0 /* UIView+Utility.m in Sources */,
+				36E870E12280324C0010330E /* BKNetworkAgent.m in Sources */,
 				0A45E69F210C197E0061BA14 /* UIGestureRecognizer+Statics.m in Sources */,
 				0A13CF8520C645AC0071F0D9 /* BaseTabBarController.m in Sources */,
 				0A36F14621A2885B00BBA9F1 /* BKBannerCell.m in Sources */,
 				0A3A5B4B2196B4AA009526F0 /* NSString+Size.m in Sources */,
-				0ADDC4E1219C38E60025C825 /* BKBatchRequest.m in Sources */,
 				0A3A5B5B2196BA28009526F0 /* DispatcherManager.m in Sources */,
+				36E870DB2280324C0010330E /* BKChainRequestAgent.m in Sources */,
 				0A3A5B582196B97B009526F0 /* AppJsonTool.m in Sources */,
 				0A9D30ED219EB8E700D545DD /* BaiDuRequest.m in Sources */,
 				0AF3A8B3212B2F9E00F46BD5 /* UIView+UIResponder.m in Sources */,
 				0A45E697210AE2FA0061BA14 /* NSObject+Runtime.m in Sources */,
-				0ADDC4E4219C38FC0025C825 /* BKBatchRequestAgent.m in Sources */,
 				0A3A5B462196B3C3009526F0 /* NSString+MD5.m in Sources */,
+				36E870DC2280324C0010330E /* BKBatchRequestAgent.m in Sources */,
 				0A45E69A210B29930061BA14 /* UIControl+Statics.m in Sources */,
+				36E870DD2280324C0010330E /* BKResult.m in Sources */,
+				36E870E02280324C0010330E /* BKRequest.m in Sources */,
+				36E870DF2280324C0010330E /* BKChainRequest.m in Sources */,
 				0A3A5B642196BFE5009526F0 /* AppBaseVC.m in Sources */,
-				0A43781521994E0B001B5464 /* BKNetworkAgent.m in Sources */,
 				0A13CF8220C645780071F0D9 /* BaseNavigationController.m in Sources */,
 				0AC33DA82149398600A3DFAE /* BKTimer.m in Sources */,
-				0A43780F219949AC001B5464 /* BKBaseRequest.m in Sources */,
 				0A3A5B4F2196B6B8009526F0 /* NSString+Date.m in Sources */,
 				0ABAFB25213D8B3E00F8AF0C /* DispatchTestVC.m in Sources */,
-				0A9D30F3219EC65800D545DD /* BKChainRequestAgent.m in Sources */,
 				0A13CF7E20C6453D0071F0D9 /* RootVC.m in Sources */,
 				0A36F13F21A24E4000BBA9F1 /* BKBanner.m in Sources */,
 				0A3A5B552196B966009526F0 /* Dispatcher.m in Sources */,
 				0A36F14221A24E5500BBA9F1 /* BKBannerModel.m in Sources */,
+				36E870DE2280324C0010330E /* BKBaseRequest.m in Sources */,
+				36E870E32280324C0010330E /* PGRequestResponseCheck.m in Sources */,
 				0A13CF7520C644E90071F0D9 /* main.m in Sources */,
 				0A13CF6720C644E70071F0D9 /* AppDelegate.m in Sources */,
 				0A647CFD21B69DF200D82C3D /* UIButton+Position.m in Sources */,
-				0A9D30F0219EC64600D545DD /* BKChainRequest.m in Sources */,
-				0A437812219949C8001B5464 /* BKRequest.m in Sources */,
 				0A73AFC521990BA9008423C3 /* UIImage+Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

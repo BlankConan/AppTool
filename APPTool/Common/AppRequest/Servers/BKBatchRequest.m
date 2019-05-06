@@ -24,13 +24,23 @@
     self = [super init];
     if (self) {
         _finishedCount = 0;
-        _requestRecorder = [requestArray copy];
+        _requestRecorder = [requestArray mutableCopy];
         for (BKRequest *reqest in _requestRecorder) {
             if (![reqest isKindOfClass:[BKRequest class]]) {
                 debugLog(@"Error, item must be Appreqeust instance");
                 return nil;
             }
         }
+    }
+    return self;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _finishedCount = 0;
+        _requestRecorder = [NSMutableArray array];
     }
     return self;
 }
@@ -48,7 +58,10 @@
 }
 
 
-- (void)addRequest:(BKRequest *)request completeWithSuccess:(void (^)(BKRequest *))success failured:(void (^)(BKRequest *))failured {
+- (void)addRequest:(BKRequest *)request
+completeWithSuccess:(void (^)(BKRequest *baseRequest))success
+          failured:(void (^)(BKRequest *baseRequest))failured {
+    
     [_requestRecorder addObject:request];
     request.successCompletionBlock = (void(^)(BKBaseRequest *))success;
     request.failureCompletionBlock = (void(^)(BKBaseRequest *))failured;
@@ -103,7 +116,7 @@
     }
 }
 
-- (void)requestFailed:(BKBaseRequest *)request {
+- (void)requestFailured:(BKBaseRequest *)request {
     _failedRequest = (BKRequest *)request;
  
     if (_delegate && [_delegate respondsToSelector:@selector(batchRequestFailured:failuredReqeust:)]) {

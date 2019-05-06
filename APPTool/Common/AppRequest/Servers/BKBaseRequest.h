@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, BKRequestSerializerType) {
 };
 
 // 构造POST block
-typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
+typedef void (^AFConstructingBlock)(id <AFMultipartFormData> formData);
 
 /**
  请求x回调协议
@@ -90,7 +90,7 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 /// request base arguments.
 @property (nonatomic, strong) NSDictionary *requestBaseArguments;
 /// request method.
-@property (nonatomic, assign) BKRequestMethod reqeustMethod;
+@property (nonatomic, assign) BKRequestMethod requestMethod;
 /// request Serializer type.
 @property (nonatomic, assign) BKRequestSerializerType requestSerializerType;
 
@@ -105,9 +105,10 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 @property (nonatomic, strong) NSURLSessionDataTask *task;
 
 #pragma mark - response
-
+// 返回的数据
 @property (nonatomic, copy) id responseObject;
 @property (nonatomic, copy) NSDictionary *responseHeaders;
+// 请求响应code 200~500
 @property (nonatomic, assign) NSInteger reponseStatusCode;
 @property (nonatomic, strong) NSError *error;
 
@@ -117,11 +118,12 @@ typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData);
 @property (nonatomic, weak) id<BKRequestDelegate> delegate;
 /// success block.
 @property (nonatomic, copy) void (^successCompletionBlock)(BKBaseRequest *);
-// failure block.
+/// failure block.
 @property (nonatomic, copy) void (^failureCompletionBlock)(BKBaseRequest *);
 /// progress block.
 @property (nonatomic, copy) void (^progressBlock)(NSProgress *);
-
+/// except code block.
+@property (nonatomic, copy) void (^exceptCodeBlock)(NSInteger code, NSString *msg);
 
 /**
  Add self to request queue

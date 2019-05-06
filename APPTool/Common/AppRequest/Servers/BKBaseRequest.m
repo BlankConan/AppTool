@@ -19,7 +19,7 @@
         _cdnUrl = @"";
         _baseUrl = @"";
         _requestUrl = @"";
-        _reqeustMethod = BKRequestMethodGet;
+        _requestMethod = BKRequestMethodGet;
         _requestTimeoutInterval = 60;
         _requestSerializerType = BKRequestSerializerHTTP;
     }
@@ -37,8 +37,7 @@
 }
 
 - (BOOL)isExcuting {
-    return true;
-//    return self.task.state == NSURLSessionTaskStateRunning;
+    return self.task.state == NSURLSessionTaskStateRunning;
 }
 
 - (void)startCompletionBlockWithProgress:(void (^)(NSProgress * _Nonnull))progress

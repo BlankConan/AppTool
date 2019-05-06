@@ -12,7 +12,7 @@
 /**
  所有的请求结果类都必须继承此类
  */
-@interface BKResult : NSObject
+@interface BKResult : NSObject<YYModel>
 
 
 /// responseMessage.
@@ -31,6 +31,6 @@
  @param jsonDic 由json转过来的dic
  @return 返回解析的数据Model
  */
-+ (instancetype)parseTotalData:(NSDictionary *)jsonDic;
++ (instancetype)parseTotalData:(id)jsonDic;
 
 @end
